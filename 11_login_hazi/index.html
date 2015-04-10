@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>bezdi login hazi</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="css/reset.min.css">
+    <link rel="stylesheet" href="css/font.css">
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+
+  <body>
+    <main>
+
+      <h1>Bejelentkezés</h1>
+
+      <form method="post" enctype="multipart/form-data">
+
+        <!-- belepesi adatok -->
+        <div>
+          <label for="name-input">Felhasználónév</label>
+            <input type="text" name="username" id="username-id"
+            placeholder="superman2000" required>
+        </div>
+
+        <div>
+          <label for="password-input">Jelszó</label>
+            <input type="password" name="password" id="password-id"
+            placeholder="pl. •••••••••••" required>
+        </div>
+
+        <!-- felhasznalasi feltetelek -->
+        <div class="remember">
+          <label for="remember-id">
+            <input type="checkbox" name="remember" id="remember-id">
+            Jegyezd meg a jelszavam<span></span></label>
+        </div>
+
+        <!-- belepes gomb -->
+
+            <input type="submit" value="Belépés">
+        
+
+      </form>
+
+    </main>
+  </body>
+</html>
