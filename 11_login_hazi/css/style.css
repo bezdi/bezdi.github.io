@@ -94,6 +94,9 @@ input[type="checkbox"] {
 
 .remember label {
   cursor: pointer;
+  float: left;
+  width: 100%;
+  height: 35px;
 }
 
 
