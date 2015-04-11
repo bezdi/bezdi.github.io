@@ -1,0 +1,119 @@
+body {
+  font-family: montserrat;
+  background-color: #dcd6cd;
+  font-size: 10px;
+}
+
+main {
+  box-sizing: border-box;
+  width: 340px;
+  min-height: 350px;
+  margin: 0 auto;
+  padding: 0px 20px 20px;
+  position: relative;
+  top: 100px;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.25);
+}
+
+h1 {
+  font-size: 1.4em;
+  font-weight: 300;
+  letter-spacing: 3px;
+  color: #a4a0b0;
+  text-transform: uppercase;
+  text-align: center;
+  display: block;
+  background-color: #efeeee;
+  box-sizing: border-box;
+  width: 340px;
+  height: 60px;
+  margin-left: -20px;
+  margin-bottom : 20px;
+  border-radius: 10px 10px 0 0;
+  position: relative;
+  padding-top: 24px;
+}
+
+
+
+label, input {
+  display: block;
+  width: 100%;
+}
+
+label {
+  font-size: 1.4em;
+  color: #4a4261;
+  font-weight: 700;
+  line-height: 27px;
+}
+
+input[type="text"],input[type="password"] {
+  box-sizing: border-box;
+  margin-bottom: 8px;
+  padding: 10px;
+  height: 37px;
+  border: solid 1px #a4a0b0;
+  border-radius: 3px;
+  box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
+  font-size: 14px;
+}
+
+
+input[type="submit"] {
+  border: 0;
+  width: 178px;
+  height: 45px;
+  margin: 0 auto;
+  box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.2);
+  border-radius: 2px;
+
+  /*gradiens*/
+  background: #52496b; /* Old browsers */
+  background: -moz-linear-gradient(top,  #52496b 0%, #423b57 100%); /* FF3.6+ */
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#52496b), color-stop(100%,#423b57)); /* Chrome,Safari4+ */
+  background: -webkit-linear-gradient(top,  #52496b 0%,#423b57 100%); /* Chrome10+,Safari5.1+ */
+  background: -o-linear-gradient(top,  #52496b 0%,#423b57 100%); /* Opera 11.10+ */
+  background: -ms-linear-gradient(top,  #52496b 0%,#423b57 100%); /* IE10+ */
+  background: linear-gradient(to bottom,  #52496b 0%,#423b57 100%); /* W3C */
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#52496b', endColorstr='#423b57',GradientType=0 ); /* IE6-9 */
+
+  font-weight: normal;
+  text-transform: uppercase;
+  color: #dcd6cd;
+  font-family: montserrat;
+  font-size: 2em;
+  text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
+}
+
+/*checkbox*/
+div {
+  box-sizing: border-box;
+  background-color: #eeeeee;
+  width: 100%;
+  height: 35px;
+  margin: 12px 0 25px;
+  padding: 5px;
+  position: relative;
+  border-radius: 2px;
+}
+
+div > label {
+  font-weight: 300;
+  position: absolute;
+  top: 3px;
+}
+
+input[type="checkbox"] {
+  outline: solid 1px red;
+  width: 16px;
+  height: 16px
+  float: left;
+  display: inline;
+  margin: 0;
+  padding: 0;
+  border: 0;
+
+}

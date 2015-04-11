@@ -5,6 +5,7 @@ body {
 
 }
 
+
 main {
   width:340px;
   min-height:350px;
@@ -19,9 +20,11 @@ main {
   transition: box-shadow 0.3s ease-out;
 }
 
+
 main:hover {
   box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.1);
 }
+
 
 h1 {
   display: block;
@@ -45,8 +48,8 @@ h1 {
   background: -ms-linear-gradient(top,  #a4a0b0 0%,#a4a0b0 90%,#9591a0 100%); /* IE10+ */
   background: linear-gradient(to bottom,  #a4a0b0 0%,#a4a0b0 90%,#9591a0 100%); /* W3C */
   filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#a4a0b0', endColorstr='#9591a0',GradientType=0 ); /* IE6-9 */
-
 }
+
 
 label{
   font-size: 1.4em;
@@ -61,6 +64,7 @@ div {
   margin: 0 0 20px 0;
 }
 
+
 input[type="text"],
 input[type="password"] {
   font-size: 1.4em;
@@ -73,14 +77,27 @@ input[type="password"] {
   border: solid 1px #a4a0b0;
   border-radius: 3px;
   box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.1);
-
-
 }
+
+
+/*FOCUS*/
 
 input:focus {
   outline: 0;
   box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.1),0px 0px 5px 0px #6550ff;
 }
+
+.remember input:focus + span, .remember input:checked:focus + span {
+  box-shadow: 0px 0px 5px 0px #6550ff;
+}
+
+input[type="submit"]:focus {
+  background-color: #584d7e;
+  box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.2),0px 5px 7px 0px rgba(0, 0, 0, 0.3), 0px 0px 5px 0px #6550ff;
+}
+
+
+/*emlekezz a jelszora*/
 
 input[type="checkbox"] {
   width: 10px;
@@ -119,17 +136,19 @@ input[type="checkbox"] {
 }
 
 
-
 .remember input:checked + span {
   background-color: #423b57;
   border-color: #423b57;
   background-image: url("../img/check@2x-white.png");
   background-size: 16px 16px;
   box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0);
-
-
-
 }
+
+/*asd*/
+/*.remember input:focus + span, input[type="submit"]:focus {
+  box-shadow: inset 0px 2px 2px 0px rgba(0, 0, 0, 0.1),0px 0px 5px 0px #6550ff;
+}*/
+
 
 div.remember {
   height: 35px;
@@ -141,12 +160,14 @@ div.remember {
 }
 
 
-
 .remember label {
   font-weight: 300;
   position: relative;
   top: 2px;
 }
+
+
+/*belepes gomb*/
 
 input[type="submit"] {
   display: block;
@@ -155,7 +176,7 @@ input[type="submit"] {
   margin: 0 auto;
   border: 0;
   border-radius: 2px;
-  box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.2),0px 5px 7px 0px rgba(0, 0, 0, 0.3);
   background-color: #4a4261; /* Old browsers */
   position: relative;
   transition: background-color 0.2s ease-out, width 0.4s ease,
@@ -168,9 +189,9 @@ input[type="submit"] {
   color: #dcd6cd;
   text-transform: uppercase;
   text-shadow: 0px 2px 0px rgba(0, 0, 0, 0.2);
-  box-shadow: 0px 5px 7px 0px rgba(0, 0, 0, 0.3);
-
+  box-: ;
 }
+
 
 input[type="submit"]:hover {
   /*background-color: #426d9e;*/
@@ -183,5 +204,5 @@ input[type="submit"]:hover {
   border-radius: 4px;
   cursor:pointer;
   font-size: 2.2em;
-  box-shadow: 0px 5px 30px 0px rgba(0, 0, 0, 0.2);
+  box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.2),0px 5px 30px 0px rgba(0, 0, 0, 0.2);
 }
