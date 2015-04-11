@@ -173,7 +173,7 @@ input[type="submit"] {
   display: block;
   width: 178px;
   height: 45px;
-  margin: 0 auto;
+  margin: 34px auto 0;
   border: 0;
   border-radius: 2px;
   box-shadow: inset 0px -3px 0px 0px rgba(0, 0, 0, 0.2),0px 5px 7px 0px rgba(0, 0, 0, 0.3);
