@@ -1,9 +1,39 @@
 body  {
   font-family: 'Open Sans', sans-serif;
+  color: #362f2d;
+  background: white;
 }
 
 .clearfix::after {
   content:'';
   display: block;
   clear: both;
+}
+
+.header {
+  height: 50px;
+  background: #f26d7d;
+}
+
+.columns {
+
+}
+
+.content {
+  /*dev*/min-height: 200px;
+  /*dev*/background: rgba(0, 255, 0, 0.1);
+}
+
+.sidebar {
+  /*dev*/min-height: 200px;
+  /*dev*/background: rgba(0, 0, 255, 0.1);
+}
+
+.footer {
+  background: #f8b6be;
+  height: 85px;
+}
+
+@media screen and (min-width: 769px) {
+  
 }
