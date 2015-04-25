@@ -1,16 +1,23 @@
+html {
+  font-size: 62.5%;
+}
+
+
+
 body  {
   font-family: 'Open Sans', sans-serif;
   color: #362f2d;
   background: white;
+  font: 1.5em/1.5 'Open Sans', arial, sans-serif;
 }
 
-.clearfix:before,
-.clearfix:after {
+.clearfix::before,
+.clearfix::after {
     content: " "; /* 1 */
     display: table; /* 2 */
 }
 
-.clearfix:after {
+.clearfix::after {
     clear: both;
 }
 
@@ -24,9 +31,113 @@ body  {
 
 
 .header {
-  height: 50px;
-  background: #f26d7d;
+
 }
+
+.logo {
+  background: #f26d7d;
+  margin: 0;
+
+}
+
+
+.logo a {
+  background: url(../img/logo_mobil.png);
+  display: block;
+  height: 50px;
+  text-indent: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  margin: 0 auto;
+  width: 240px;
+  position: relative;
+  z-index: 100;
+}
+
+.phone {
+  height: 43px;
+  line-height: 43px;
+  border: 1px solid #f26d7d;
+  margin: 15px 20px;
+  border-radius: 10px;
+  text-align: center;
+  background: #fff;
+  position: relative
+  z-index: 100;
+}
+
+.phone a{
+  color: #007236;
+  text-decoration: none;
+
+}
+
+.menu {
+  width: 100%;
+  top: 0;
+}
+
+.menu li {
+  background-color: #f8b6be;
+  font-size: 24px;
+  list-style: none;
+
+}
+
+.menu ul {
+  margin-top: 132px;
+}
+
+.menu a {
+  display: block;
+  text-decoration: none;
+  color: #ffffff;
+
+}
+
+
+.menu .toggle {
+  display: block;
+  width: 50px;
+  height: 50px;
+  background-color: red;
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+
+#nav:target .menu ul {
+  display: block;
+}
+
+#nav:target .menu .close {
+  display: block;
+}
+
+#nav:target .header {
+  background-color: #f8b6be;
+
+}
+
+.menu .close {
+  display: none;
+}
+
+
+.facebook {
+  display: none;
+}
+
+
+
+.menu ul {
+  display: none;
+  padding: 0;
+  margin: 0;
+}
+
+/*ceglogo*/
+
 
 .columns {
 
@@ -46,7 +157,7 @@ body  {
   background: #f8b6be;
   height: 85px;
 }
-
+/*--------------------------------------------------------------------------*/
 @media screen and (min-width: 978px) {
   body {
     background: white;
@@ -60,9 +171,11 @@ body  {
 
   /*header*/
   .header {
-    height: 195px;
+    /*height: 195px;*/
     background: none;
+    padding-bottom: 25px;
   }
+
 
   .columns {
     background: #fff;
@@ -85,6 +198,70 @@ body  {
       margin: 50px 0;
     }
 
+    .logo {
+      float: left;
+      background: none;
+      margin: 20px 0 30px;
+    }
 
+    .logo a{
+      float: left;
+      width: 480px;
+      height: 60px;
+      background: url(../img/logo_desktop.png);
 
-}
+    }
+
+    .phone {
+      background: #fff;
+      float: right;
+      height: auto;
+      margin: 30px 0 0;
+      width: 175px;
+      line-height: 1.5;
+      padding: 5px 10px;
+    }
+    .phone a{
+      white-space: nowrap;
+      font-size: 1.6em;
+      font-style: italic;
+    }
+
+    .menu {
+      height: 40px;
+      width: auto;
+      /*dev*/min-width: 200px;
+      float: left;
+      position: static;
+      clear: both;
+
+    }
+
+    .menu .toggle {
+      display: none;
+    }
+
+    nav:target .menu .close {
+      display: none;
+    }
+
+    .menu ul {
+      display: none;
+      margin-top: 0;
+    }
+
+    .facebook {
+      float: right;
+      display: block;
+      height: 40px;
+      /*dev*/ min-width: 100px;
+      /*dev*/ background-color: rgba(0, 0, 256, 0.25);
+    }
+
+    .menu li {
+      float: left;
+    }
+
+    #nav:target header {
+      background: #fff;
+    }
