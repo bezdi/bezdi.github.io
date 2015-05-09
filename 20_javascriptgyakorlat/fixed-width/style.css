@@ -1,0 +1,76 @@
+body {
+  font: 12px/1.5 arial;
+  margin: 0;
+}
+h1 {
+  font-size: 20px;
+  line-height: 2;
+  margin: 1em auto;
+  text-align: center;
+  width: 320px;
+}
+
+/* custom fonts */
+.anonymous-pro { font-family: 'Anonymous Pro'; }
+.cousine { font-family: 'Cousine'; }
+.droid-sans-mono { font-family: 'Droid Sans Mono'; }
+.fira-mono { font-family: 'Fira Mono'; }
+.inconsolata { font-family: 'Inconsolata'; }
+.nova-mono { font-family: 'Nova Mono'; }
+.pt-mono { font-family: 'PT Mono'; }
+.source-code-pro { font-family: 'Source Code Pro'; }
+.ubuntu-mono { font-family: 'Ubuntu Mono'; }
+.vt323 { font-family: 'VT323'; }
+
+/* font list */
+.fonts {
+  list-style: none;
+  margin: 0 1em 0 0;
+  padding: 0;
+}
+.fonts > li {
+  background: rgba(255, 255, 0, .25);
+  box-sizing: border-box;
+  float: left;
+  margin: 0 0 1em 1em;
+  padding: 1em;
+  width: calc(25% - 1em);
+}
+h2 {
+  border-bottom: 1px solid #999;
+  font-size: 16px;
+  font-weight: normal;
+  line-height: 2;
+  margin: 0;
+  text-align: center;
+}
+h2 span {
+  background: rgba(0, 0, 0, .25);
+}
+
+/* test */
+.test-chamber {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.test-chamber li {
+  display: inline-block;
+}
+.test-chamber img {
+}
+
+/* results */
+.results {
+  margin: 1em 0 0;
+}
+.results dt {
+  box-sizing: border-box;
+  float: left;
+  padding-right: 10px;
+  text-align: right;
+  width: 50%;
+}
+dd {
+  margin-left: 50%;
+}
