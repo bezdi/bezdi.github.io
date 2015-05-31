@@ -196,15 +196,15 @@ header .wrapper {
   color: #6b6b74;
   width: 100%;
 }
-.contact div{
-  padding: 0 15px 0;
-  box-sizing: border-box;
-}
+
 .contact h1 {
   font-weight: 600;
+  margin-bottom: 10px;
 }
 .half {
   margin-bottom: 30px;
+  padding: 0 15px 0;
+  box-sizing: border-box;
 }
 
 
@@ -218,7 +218,7 @@ header .wrapper {
       }
       /*____________________references____________________*/
       .references li {
-        margin: 0 30px 30px;
+        margin: 0 15px 30px;
       }
       .references .wrapper {
         padding: 45px 15px 10px;
