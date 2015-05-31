@@ -15,8 +15,8 @@ html {
 }
 body {
   background-color: #212124;
-  background-color: #fff;
   color: #8b8b94;
+  padding-bottom: 30px;
 }
 .wrapper {
   width: 100%;
@@ -187,7 +187,8 @@ header .wrapper {
 }
 /*____________________contact____________________*/
 .contact {
-  background-color: rgba(33, 33, 36, 0.06);
+  /*background-color: rgba(33, 33, 36, 0.06);*/
+  background-color: #f1f1f1;
   font-size: 1.6em;
   line-height: 1.6;
   padding-top: 30px;
