@@ -55,7 +55,6 @@ header .wrapper {
   padding: 45px 15px;
 }
 .references li {
-  display: inline;
   background-image: url(../assets/bf-sprites.png);
   background-repeat: no-repeat;
   background-size: 600px;
@@ -64,12 +63,21 @@ header .wrapper {
   overflow: hidden;
   white-space: nowrap;
   height: 38px;
+  margin: 15px;
 }
 /*SPRITES*/
 .tv2 {
   background-position: 0 -100px;
   width: 29px;
-  }
+}
+.schwarzkopf {
+  background-position: -50px -100px;
+  width: 68px;
+}
+.airwaves {
+  background-position: -150px -100px;
+  width: 136px;
+}
 /* Break 1280px+ --------------------------------------------------------*/
 
     /*____________________video____________________*/
