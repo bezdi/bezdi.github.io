@@ -4,7 +4,6 @@ html {
 }
 body {
   background-color: #212124;
-  background-color: #fff;
   color: #8b8b94;
 }
 .wrapper {
@@ -18,7 +17,6 @@ header {
   width: 100%;
   height: 65px;
   margin: 0 auto;
-  background-color: #212124;
 }
 header h1 {
   font-size: 2.6em;
@@ -34,7 +32,6 @@ header .wrapper {
   height: 0;
   margin: 0 auto;
   width: 100%;
-  background-color: #212124;
 }
 .video iframe {
   position: absolute;
@@ -51,7 +48,7 @@ header .wrapper {
   font-size: 1.6em;
 }
 .references .wrapper {
-  padding: 45px 15px;
+  padding: 45px 15px 30px;
 }
 .references li {
   background-image: url(../assets/bf-sprites.png);
@@ -93,8 +90,6 @@ header .wrapper {
   background-position: -250px -150px;
   width: 77px;
 }
-
-
 .ariel {
   background-position: -350px -150px;
   width: 39px;
@@ -177,9 +172,12 @@ header .wrapper {
 
     /*____________________video____________________*/
     @media screen and (min-width: 960px) {
-
+      /*____________________references____________________*/
       .references li {
         margin: 0 30px 30px;
+      }
+      .references .wrapper {
+        padding: 45px 15px 0;
       }
 
 
@@ -190,7 +188,7 @@ header .wrapper {
         @media screen and (min-width: 1310px) {
 
           .video {
-            padding-bottom: 720px;
+            padding-bottom: 770px;
             padding-left: 15px;
             padding-right: 15px;
           }
@@ -200,6 +198,9 @@ header .wrapper {
           	width: 1280px;
           	height: 720px;
             margin: 0 auto;
+            -webkit-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+            -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
+            box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
           }
         /*____________________header____________________*/
           header {
