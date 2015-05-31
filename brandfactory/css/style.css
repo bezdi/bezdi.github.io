@@ -187,42 +187,54 @@ header .wrapper {
 }
 /*____________________contact____________________*/
 .contact {
-  background-color: rgba(33, 33, 36, 0.82);
-  font-size: 1.8em;
+  background-color: rgba(33, 33, 36, 0.06);
+  font-size: 1.6em;
   line-height: 1.6;
-  padding-top: 15px;
-  padding-bottom: 30px;
+  padding-top: 30px;
   font-weight: 300;
   letter-spacing: 0.5px;
   color: #6b6b74;
   width: 100%;
 }
 .contact div{
-  padding: 0 15px;
+  padding: 0 15px 0;
   box-sizing: border-box;
 }
 .contact h1 {
   font-weight: 600;
 }
+.half {
+  margin-bottom: 30px;
+}
+
 
     /* Break 960px+ --------------------------------------------------------*/
 
     /*____________________video____________________*/
     @media screen and (min-width: 960px) {
+
+      a:hover {
+        text-decoration: underline;
+      }
       /*____________________references____________________*/
-
-
       .references li {
         margin: 0 30px 30px;
       }
       .references .wrapper {
         padding: 45px 15px 10px;
       }
-
+      /*____________________contact____________________*/
       .half{
         width: 50%;
         float: left;
       }
+      .contact .wrapper {
+        max-width: 1310px;
+      }
+      .contact {
+        font-size: 1.8em;
+      }
+
 
 
     }
@@ -262,4 +274,13 @@ header .wrapper {
           }
 
 
+        }
+
+        /*- - - - - - - retina sprite - - - - - - - - */
+        @media only screen and (-webkit-min-device-pixel-ratio: 2),
+        only screen and (min-device-pixel-ratio: 2) {
+          .references li {
+          background-image: url(../assets/bf-sprites@2x.png);
+          background-size: 600px 600px;
+          }
         }
