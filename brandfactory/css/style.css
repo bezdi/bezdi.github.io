@@ -45,7 +45,6 @@ header .wrapper {
 }
 /*____________________references____________________*/
 .references {
-  width: 100%;
   background-color: #fff;
   min-height: 90px;
   text-align: center;
@@ -63,12 +62,12 @@ header .wrapper {
   overflow: hidden;
   white-space: nowrap;
   height: 38px;
-  margin: 15px;
+  margin: 0 15px 15px;
 }
 /*SPRITES*/
 .tv2 {
   background-position: 0 -100px;
-  width: 29px;
+  width: 27px;
 }
 .schwarzkopf {
   background-position: -50px -100px;
@@ -78,30 +77,137 @@ header .wrapper {
   background-position: -150px -100px;
   width: 136px;
 }
-/* Break 1280px+ --------------------------------------------------------*/
+.pandg {
+  background-position: -300px -100px;
+  width: 88px;
+}
+.sztkiralyi {
+  background-position: -400px -100px;
+  width: 50px;
+}
+.blendamed {
+  background-position: 0px -150px;
+  width: 227px;
+}
+.magyarposta {
+  background-position: -250px -150px;
+  width: 77px;
+}
+
+
+.ariel {
+  background-position: -350px -150px;
+  width: 39px;
+}
+.axe {
+  background-position: -400px -150px;
+  width: 146px;
+}
+.baba {
+  background-position: -0px -200px;
+  width: 44px;
+}
+.bayer {
+  background-position: -50px -200px;
+  width: 38px;
+}
+.cif {
+  background-position: -100px -200px;
+  width: 38px;
+}
+.dell {
+  background-position: -150px -200px;
+  width: 38px;
+}
+.ferrero {
+  background-position: -200px -200px;
+  width: 93px;
+}
+.ford {
+  background-position: -300px -200px;
+  width: 102px;
+}
+.gilette {
+  background-position: 0px -350px;
+  width: 160px;
+}
+.hyundai {
+  background-position: -0px -250px;
+  width: 65px;
+}
+.knorr {
+  background-position: -75px -250px;
+  width: 45px;
+}
+.mol {
+  background-position: -125px -250px;
+  width: 62px;
+}
+.otp {
+  background-position: -200px -250px;
+  width: 180px;
+}
+.raffaello {
+  background-position: -400px -250px;
+  width: 58px;
+}
+.rama {
+  background-position: -500px -250px;
+  width: 60px;
+}
+.rexona {
+  background-position: -0px -300px;
+  width: 97px;
+}
+.soproni {
+  background-position: -100px -300px;
+  width: 87px;
+}
+.tcom {
+  background-position: -200px -300px;
+  width: 161px;
+}
+.toyota {
+  background-position: -400px -300px;
+  width: 46px;
+}
+
+
+    /* Break 960px+ --------------------------------------------------------*/
 
     /*____________________video____________________*/
-    @media screen and (min-width: 1310px) {
+    @media screen and (min-width: 960px) {
 
-      .video {
-        padding-bottom: 720px;
-        padding-left: 15px;
-        padding-right: 15px;
+      .references li {
+        margin: 0 30px 30px;
       }
-      .video iframe {
-        position: static;
-        display: block;
-      	width: 1280px;
-      	height: 720px;
-        margin: 0 auto;
-      }
-    /*____________________header____________________*/
-      header {
-        height: 100px;
 
-      }
-      header .wrapper {
-        padding: 35px 15px 0;
-      }
 
     }
+        /* Break 1280px+ --------------------------------------------------------*/
+
+        /*____________________video____________________*/
+        @media screen and (min-width: 1310px) {
+
+          .video {
+            padding-bottom: 720px;
+            padding-left: 15px;
+            padding-right: 15px;
+          }
+          .video iframe {
+            position: static;
+            display: block;
+          	width: 1280px;
+          	height: 720px;
+            margin: 0 auto;
+          }
+        /*____________________header____________________*/
+          header {
+            height: 100px;
+
+          }
+          header .wrapper {
+            padding: 35px 15px 0;
+          }
+
+        }
