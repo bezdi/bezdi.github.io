@@ -2,8 +2,20 @@ html {
   font-size: 62.5%;
   font-family: 'Titillium Web', sans-serif;
 }
+.clearfix {
+  *zoom: 1; /*For IE 6/7 only*/
+}
+.clearfix::before,
+.clearfix::after {
+    content: " ";
+    display: table;
+}
+.clearfix::after {
+    clear: both;
+}
 body {
   background-color: #212124;
+  background-color: #fff;
   color: #8b8b94;
 }
 .wrapper {
@@ -12,17 +24,23 @@ body {
   box-sizing: border-box;
   margin: 0 auto;
 }
+a {
+  color: #131315;
+  text-decoration: none;
+}
 /*____________________header____________________*/
 header {
   width: 100%;
   height: 65px;
   margin: 0 auto;
+  background-color: #212124;
 }
 header h1 {
-  font-size: 2.6em;
+  font-size: 2.0em;
+  color: #fff;
 }
 header .wrapper {
-  padding: 17px 15px 0;
+  padding: 22px 15px 0;
 }
 /*____________________video____________________*/
 .video {
@@ -32,6 +50,7 @@ header .wrapper {
   height: 0;
   margin: 0 auto;
   width: 100%;
+  background-color: #212124;
 }
 .video iframe {
   position: absolute;
@@ -166,18 +185,43 @@ header .wrapper {
   background-position: -400px -300px;
   width: 46px;
 }
-
+/*____________________contact____________________*/
+.contact {
+  background-color: rgba(33, 33, 36, 0.82);
+  font-size: 1.8em;
+  line-height: 1.6;
+  padding-top: 15px;
+  padding-bottom: 30px;
+  font-weight: 300;
+  letter-spacing: 0.5px;
+  color: #6b6b74;
+  width: 100%;
+}
+.contact div{
+  padding: 0 15px;
+  box-sizing: border-box;
+}
+.contact h1 {
+  font-weight: 600;
+}
 
     /* Break 960px+ --------------------------------------------------------*/
 
     /*____________________video____________________*/
     @media screen and (min-width: 960px) {
       /*____________________references____________________*/
+
+
       .references li {
         margin: 0 30px 30px;
       }
       .references .wrapper {
-        padding: 45px 15px 0;
+        padding: 45px 15px 10px;
+      }
+
+      .half{
+        width: 50%;
+        float: left;
       }
 
 
@@ -188,9 +232,8 @@ header .wrapper {
         @media screen and (min-width: 1310px) {
 
           .video {
-            padding-bottom: 770px;
-            padding-left: 15px;
-            padding-right: 15px;
+            padding-bottom: 680px;
+
           }
           .video iframe {
             position: static;
@@ -202,7 +245,7 @@ header .wrapper {
             -moz-box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
             box-shadow: 0px 0px 23px 0px rgba(0,0,0,0.75);
           }
-        /*____________________header____________________*/
+          /*____________________header____________________*/
           header {
             height: 100px;
 
@@ -210,5 +253,13 @@ header .wrapper {
           header .wrapper {
             padding: 35px 15px 0;
           }
+          /*____________________references____________________*/
+          .references {
+            margin-top: -80px;
+          }
+          .references .wrapper {
+            padding: 190px 15px 25px;
+          }
+
 
         }
