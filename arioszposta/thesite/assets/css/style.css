@@ -1,5 +1,4 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=latin-ext");
 body {
   /* padding-top: 50px; now define in JS to fit any title length */
   padding-bottom: 10px;
@@ -1011,7 +1010,7 @@ p.return-to-survey {
 }
 
 body {
-  font-family: 'Open Sans', Arial, sans-serif;
+  font-family: Arial, sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
@@ -1297,7 +1296,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 .input-error .question-text::before, .mandatory.missing .question-text::before {
   content: ' ';
   display: block;
-  background-color: #B80000;
+  background-color: #e1251b;
   top: 4px;
   bottom: 4px;
   left: 0;
@@ -1306,7 +1305,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .questionvalidcontainer .text-danger {
-  color: #B80000;
+  color: #e1251b;
   font-weight: 500;
 }
 
