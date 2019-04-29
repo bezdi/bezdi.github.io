@@ -30,7 +30,7 @@ const svgSprite = require('gulp-svg-sprite');
 function browserSync(done) {
     browsersync.init({
         server: {
-            baseDir: "./_site"
+            baseDir: "./thesite"
         },
         port: 3000
     });
@@ -48,7 +48,7 @@ function browserSyncReload(done) {
 function images() {
     return gulp
       .src("./assets/img/**/*")
-      .pipe(newer("./_site/assets/img"))
+      .pipe(newer("./thesite/assets/img"))
       .pipe(
         imagemin([
           imagemin.gifsicle({ interlaced: true }),
@@ -66,7 +66,7 @@ function images() {
           })
         ])
       )
-      .pipe(gulp.dest("./_site/assets/img"));
+      .pipe(gulp.dest("./thesite/assets/img"));
   }
 
 // CSS task
@@ -81,11 +81,11 @@ function css() {
 
             this.emit('end');
         })
-        .pipe(gulp.dest("./_site/assets/css/"))
+        .pipe(gulp.dest("./thesite/assets/css/"))
         .pipe(rename({ suffix: ".min" }))
         .pipe(postcss([autoprefixer(), cssnano()]))
         .pipe(sourcemaps.write('./maps'))
-        .pipe(gulp.dest("./_site/assets/css/"))
+        .pipe(gulp.dest("./thesite/assets/css/"))
         .pipe(browsersync.stream());
 }
 
@@ -96,7 +96,7 @@ function css() {
 //svg sprite config
 var baseDir = './assets/svgs-to-sprite',   // <-- Set to your SVG base directory -------source
     svgGlob = '**/*.svg',       // <-- Glob to match your SVG files
-    outDir = './_site/assets/img/svg-sprite',     // <-- Main output directory
+    outDir = './thesite/assets/img/svg-sprite',     // <-- Main output directory
     config = {
         "dest": "./asd",
         "log": "info",
@@ -121,7 +121,7 @@ function sprite() {
 function folders() {
     return gulp
         .src('*.*', { read: false })
-        .pipe(gulp.dest('./_site'))
+        .pipe(gulp.dest('./thesite'))
         .pipe(gulp.dest('./assets'))
         .pipe(gulp.dest('./assets/scss'))
         .pipe(gulp.dest('./assets/img'))
@@ -150,7 +150,7 @@ function jquery() {
 function watchFiles() {
     gulp.watch("./assets/svg/**/*.svg", sprite);
     gulp.watch("./assets/scss/**/*.scss", css);
-    gulp.watch("./_site/**/*", browserSyncReload);
+    gulp.watch("./thesite/**/*", browserSyncReload);
     gulp.watch("./assets/img/**/*", images);
 }
 
