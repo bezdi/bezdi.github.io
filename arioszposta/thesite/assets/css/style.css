@@ -1355,8 +1355,6 @@ a#clearallbtnlink {
 
 @media (min-width: 768px) {
   div[id^=group-] .question-container .question-code-container {
-    display: block;
-    opacity: 1;
     color: #1b5072;
     font-size: 13px;
     font-weight: 400;
@@ -1723,12 +1721,6 @@ input[type="text"].text {
 
 .changeorder-col-last4 .multiple-choice-container > div:last-child > .row > div:nth-last-of-type(4) {
   order: 2;
-}
-
-@media (min-width: 768px) {
-  div[id^=group-] .question-container .question-code-container {
-    opacity: 0;
-  }
 }
 
 .tesztClass {

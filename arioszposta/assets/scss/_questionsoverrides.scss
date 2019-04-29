@@ -7,8 +7,8 @@ div[id^=group-] {
         // display: none;
         .question-code-container {
             @include sdf-minBp(3) {
-                display: block;
-                opacity: 1;
+                // display: block;
+                // opacity: 1;
                 color: $c-blue;
                 font-size: 13px;
                 font-weight: 400;
@@ -400,7 +400,7 @@ input[type="text"].text {
 }
 div[id^=group-] .question-container .question-code-container {
     @include sdf-minBp(3) {
-        opacity: 0;
+        // opacity: 0;
     }
 
 }
