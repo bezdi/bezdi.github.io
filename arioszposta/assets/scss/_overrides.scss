@@ -1,0 +1,337 @@
+
+
+
+//font family
+@import url('https://fonts.googleapis.com/css?family=Open+Sans:400,400i,700,700i&subset=latin-ext');
+body {
+    // font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif; 
+    // box-sizing: border-box;
+}
+h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
+    // font-family: Arial, sans-serif;
+    font-family: 'Open Sans', Arial, sans-serif; 
+}
+
+//main layout
+.outerframe.container {
+    margin-top: 0;
+}
+@include sdf-minBp(3) {
+    .outerframe.container { 
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: $c-gray2;
+        box-sizing: border-box;
+    }
+    #main-row {
+        margin-left: 0;
+        margin-right: 0;
+    }
+}
+.navbar-default, #topContainer.jumbotron {
+    margin-left: auto;
+    margin-right: auto;
+    @include sdf-minBp(3) {
+        max-width: 750px;
+        box-sizing: border-box;
+    }
+    @include sdf-minBp(5) {
+        max-width: 970px;
+    }
+    @include sdf-minBp(7) {
+        max-width: 1170px;
+    }
+}
+
+#main-col { //fs 15
+    background-color: #fff;
+    margin-top: 3.5em;
+    margin-top: 2.5em;
+    padding-top: 1em;
+    padding-bottom: 1em;
+    @include sdf-minBp(3) {
+        background: #fff url('../files/earmark.svg') top right no-repeat;
+        background-size: 45px;
+        background-size: 3em;
+    }
+}
+#outerframeContainer {
+    -webkit-box-shadow: 0px 0px 67px 0px rgba(0,0,0,0.3);
+    -moz-box-shadow: 0px 0px 67px 0px rgba(0,0,0,0.3);
+    box-shadow: 0px 0px 67px 0px rgba(0,0,0,0.3);
+    padding-bottom: 15px;
+    min-height: inherit;
+}
+
+//navbar
+.navbar-default .navbar-nav {
+    & > li > a {
+        color: $c-blue;
+        padding-left: 5px;
+        padding-right: 5px;
+    }
+    @include sdf-minBp(3) {
+        & > li > a {
+            background-color: $c-gray2;
+            border-left: 1px solid $c-gray1;
+            border-right: 1px solid $c-gray1;
+            border-radius: 3px 3px 0px 0px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+            position: relative;
+            // bottom: 2px;
+            transition:
+                    .2s background-color ease-in,
+                    .2s color ease-in,
+                    .1s bottom linear;
+            &:hover {
+                color: #fff;
+                background-color: $c-blue;
+                // bottom: 2px;
+                transition:
+                    .1s background-color ease-out,
+                    .2s color ease-out,
+                    .15s bottom linear;
+            }
+        }
+    }
+    @include sdf-minBp(5) {
+        & > li > a {
+            padding-left: 15px;
+            padding-right: 15px;
+
+        }
+    }
+}
+.navbar-default {
+    background-color: $c-gray1; 
+}
+#navbar {
+    @include sdf-minBp(3) {
+        width: 100%;
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+}
+
+//dropdown menu
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    @include sdf-minBp(3) {
+        &:hover, &:focus {
+            color: #fff;
+        }
+
+    }
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li.current.active > a {
+    color: #fff;
+}
+@include sdf-minBp(3) {
+    .navbar-default .navbar-nav > li > a:focus {
+        color: $c-blue;
+        &:hover {
+            color: #fff;
+            background-color: $c-blue;
+        }
+    }
+
+}
+
+
+//dropdown button
+.navbar-default .navbar-nav > .open > a:focus {
+    background-color: darken($color: $c-blue, $amount: 5);
+}
+.nav .open > a, .nav .open > a:hover, .nav .open > a:focus {
+    border-color: $c-gray1;
+}
+.navbar-default .navbar-nav > li > a:focus {
+    background-color: $c-gray2;
+}
+
+//mobile nav button
+.navbar-default .navbar-toggle {
+    background-color: $c-blue;
+    border: 0;
+}
+
+//mobile nav dropdown
+.navbar-default .navbar-nav .open .dropdown-menu > li > a {
+    color: $c-blue;
+}
+.navbar-default .navbar-nav .open .dropdown-menu > li > a:hover, .navbar-default .navbar-nav .open .dropdown-menu > li > a:focus {
+    @include sdf-maxBp(3) {
+        color: darken($color: $c-blue, $amount: 25);
+    }
+}
+
+//progress-bar
+#topContainer{
+    background-color: $c-blue;
+    &.jumbotron {
+        left: 0;
+        right: 0;  
+    }  
+}
+
+//logo 15  736x119 49.0666666667x7.93333333333
+.mfb-logo a {
+    font-size: .28em;
+    width: 49.0666666667em;
+    height: 7.93333333333em;
+    text-indent: 200%;
+    white-space: nowrap;
+    overflow: hidden;
+    display: block;
+    background: url('../files/mfb25-logo.png');
+    background-size: 49.0666666667em;
+    background-repeat: no-repeat;
+    position: relative;
+    top: 11px;
+    @include sdf-minBp(3) {
+        top: 18px;
+        font-size: .25em;
+    }
+    @include sdf-minBp(5) {
+        top: 22px;
+        font-size: .3em;
+    }
+    @include sdf-minBp(7) {
+        font-size: 0.37em;
+        top: 36px;
+    }
+}
+
+//slogan
+.mfb-slogan {
+    display: none;
+    text-align: right;
+    letter-spacing: -1px;
+    h2 {
+        line-height: 1.30;
+        color: $c-blue;
+        letter-spacing: -.5px;
+        font-size: 16px;
+    }
+    @include sdf-minBp(3) {
+        display: block;
+        h2 {
+        }
+    }
+    @include sdf-minBp(5) {
+        h2 {
+            font-size: 23px;
+            margin-top: 24px;
+
+        }
+    }
+}
+
+//progress bar
+#topContainer .container {
+    padding-left: 0;
+    padding-right: 0;
+}
+#topContainer.jumbotron {
+    margin-bottom: 0;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+.progress {
+    background-color:$c-gray3;
+    font-weight: 700;
+    border-radius: 2px;
+    height: 24px;
+    -webkit-box-shadow: inset 0px 2px 4px -2px rgba(0,0,0,0.46);
+-moz-box-shadow: inset 0px 2px 4px -2px rgba(0,0,0,0.46);
+box-shadow: inset 0px 2px 4px -2px rgba(0,0,0,0.46);
+}
+.progress .progress-bar {
+    -webkit-box-shadow: none;
+    box-shadow: none;
+    background-color: rgba($color: #fff, $alpha: 0.85);
+    color: $c-blue;
+    font-size: 14px;
+    letter-spacing: .5px;
+    padding-top: 0.51em;
+    &[aria-valuenow="0"] {
+        background-color: transparent;
+        border-left: 2px solid rgba($color: #fff, $alpha: 0.85);
+        padding-left: 15px;
+    }
+}
+
+
+
+//tipp hide
+.questionvalidcontainer .text-info {
+    display: none;
+}
+
+//error
+.input-error, .mandatory.missing {
+    border: 0;
+    .question-text {
+        // border-bottom: 1px solid $c-red;
+        // color: $c-red;
+        position: relative;
+        padding-left: 12px;
+        &::before {
+            content: ' ';
+            display: block;
+            background-color: $c-red;
+            top: 4px;
+            bottom: 4px;
+            left: 0;
+            width: 2px;
+            position: absolute;
+        }
+    }
+}
+.questionvalidcontainer .text-danger {
+    color: $c-red;
+    font-weight: 500;
+    .emtip.good {
+        display: none;  
+    }
+}
+
+.emtip.error, .errormandatory{
+    position: relative;
+    padding-left: 12px;
+    span:before {
+        content: "\2022";
+            display: block;
+            // background-color: $c-red;
+            top: 2px;
+            left: -1px;
+            width: 2px;
+            position: absolute;
+    }
+}
+
+//header ie fix
+.navbar-fixed-top, .navbar-fixed-bottom {
+    @include sdf-minBp(3) {
+        right: calc(50% - 375px);
+        left: calc(50% - 375px);
+
+    }
+    @include sdf-minBp(6) {
+        right: calc(50% - 485px);
+        left: calc(50% - 485px);
+
+    }
+    @include sdf-minBp(7) {
+        right: calc(50% - 585px);
+        left: calc(50% - 585px);
+
+    }
+}
+
+
+//hide button from menu
+a#clearallbtnlink {
+    display: none;
+}

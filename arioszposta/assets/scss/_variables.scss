@@ -1,0 +1,31 @@
+//colors
+$c-gray1: #f7f4f4;
+$c-gray2: #edebeb;
+$c-gray3: #d5d5d5;
+$c-gray4: #9B9393;
+$c-blue: #1b5072;
+$c-red: #B80000;
+
+
+// breakpoints
+$bp-step: 170 !default;
+$bp-1: 320 !default;
+$bp-2: $bp-1 + $bp-step !default;
+$bp-3: $bp-1 + $bp-step * 2 !default;
+$bp-4: $bp-1 + $bp-step * 3 !default;
+$bp-5: $bp-1 + $bp-step * 4 !default;
+$bp-6: $bp-1 + $bp-step * 5 !default;
+$bp-7: $bp-1 + $bp-step * 7 !default;
+$bp-8: $bp-1 + $bp-step * 9 !default;
+$bp-9: $bp-1 + $bp-step * 12 !default;
+
+$bp-1: 400;
+$bp-2: 480;
+$bp-3: 768;
+$bp-4: 800;
+$bp-5: 992;
+$bp-6: 1000;
+$bp-7: 1200;
+$bp-8: 1400;
+$bp-9: 1500;
+$bp-10: 1600;
