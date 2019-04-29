@@ -1353,22 +1353,6 @@ a#clearallbtnlink {
   display: none;
 }
 
-@media (min-width: 768px) {
-  div[id^=group-] .question-container .question-code-container {
-    color: #1b5072;
-    font-size: 13px;
-    font-weight: 400;
-    position: absolute;
-    top: 0;
-    left: -50px;
-    background-color: #fff;
-    padding: 3px;
-    border: 1px solid #1b5072;
-    border-radius: 2px;
-    box-sizing: border-box;
-  }
-}
-
 div[id^=group-] .question-container .question-title-container {
   padding-top: 15px;
   padding-bottom: 10px;
