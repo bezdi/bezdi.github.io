@@ -1,0 +1,1 @@
+{"version":3,"sources":["style.scss","style.min.css"],"names":[],"mappings":"AAKA,KAJI,kCCCJ","file":"../style.min.css","sourcesContent":["@mixin asd {\r\n    background-color: #106d3b !important;\r\n    \r\n}\r\n\r\nbody {\r\n    @include asd;\r\n}","body {\n  background-color: #106d3b !important;\n}\n"]}
