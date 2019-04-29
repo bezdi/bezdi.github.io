@@ -7,17 +7,17 @@ div[id^=group-] {
         // display: none;
         .question-code-container {
             @include sdf-minBp(3) {
-                // color: $c-blue;
-                // font-size: 13px;
-                // font-weight: 400;
-                // position: absolute;
-                // top: 0;
-                // left: -50px;
-                // background-color: #fff;
-                // padding: 3px;
-                // border: 1px solid $c-blue;
-                // border-radius: 2px;
-                // box-sizing: border-box;
+                color: $c-blue;
+                font-size: 13px;
+                font-weight: 400;
+                position: absolute;
+                top: 0;
+                left: -50px;
+                background-color: #fff;
+                padding: 3px;
+                border: 1px solid $c-blue;
+                border-radius: 2px;
+                box-sizing: border-box;
             }
             
         }
