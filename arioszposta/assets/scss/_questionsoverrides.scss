@@ -7,7 +7,7 @@ div[id^=group-] {
         // display: none;
         .question-code-container {
             @include sdf-minBp(3) {
-                color: $c-blue;
+                color: $c-mpgreen1;
                 font-size: 13px;
                 font-weight: 400;
                 position: absolute;
@@ -15,7 +15,7 @@ div[id^=group-] {
                 left: -50px;
                 background-color: #fff;
                 padding: 3px;
-                border: 1px solid $c-blue;
+                border: 1px solid $c-mpgreen1;
                 border-radius: 2px;
                 box-sizing: border-box;
             }
@@ -27,7 +27,7 @@ div[id^=group-] {
             padding-top: 15px;
             padding-bottom: 10px;
             background-color: transparent;
-            color: $c-blue;
+            color: $c-mpgreen1;
             font-weight: 700;
             letter-spacing: -.25px;
             .text-danger.asterisk {
@@ -80,7 +80,7 @@ h3.group-name {
     margin-top: 10.5px;
     margin-bottom: 35px;
     // color: $c-gray4;
-    color: $c-blue;
+    color: $c-mpgreen1;
     font-size: 20px;
     letter-spacing: 1px;
     text-transform: uppercase;
@@ -100,7 +100,7 @@ h3.group-name {
 }
 .no-more-tables {
     thead {
-        color: $c-blue;
+        color: $c-mpgreen1;
     }
     tr {
         border: 0;
@@ -112,7 +112,7 @@ h3.group-name {
         background-color: lighten($color: $c-gray2, $amount: 4);
     }
     .answertext {
-        color: $c-blue;
+        color: $c-mpgreen1;
     }
     .header_row th {
         font-weight: 500;
@@ -158,7 +158,7 @@ h3.group-name {
     height: 7px;
     left: 5px;
     top: 5px;
-    background-color: $c-blue;
+    background-color: $c-mpgreen1;
 }
 .radio label::before {
     border-color: $c-gray4;
@@ -207,7 +207,7 @@ h3.group-name {
     }
     #moveprevbtn {
         background-color: $c-gray1;
-        color: $c-blue;
+        color: $c-mpgreen1;
         &:hover {
             // background-color: $c-gray3;
             background-color: darken($c-gray1, 5%);  
@@ -215,10 +215,10 @@ h3.group-name {
         }
     }
     #movenextbtn {
-        background-color: $c-blue;
+        background-color: $c-mpgreen1;
         &:hover {
-            background-color: darken($c-blue, 10%);
-            // color: $c-blue;
+            background-color: darken($c-mpgreen1, 10%);
+            // color: $c-mpgreen1;
         }
     }
 }

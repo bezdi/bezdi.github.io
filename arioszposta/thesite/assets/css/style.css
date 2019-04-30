@@ -1068,7 +1068,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 #outerframeContainer {
-  box-shadow: 0px 0px 67px 0px rgba(0, 0, 0, 0.3);
   min-height: inherit;
 }
 
@@ -1344,7 +1343,7 @@ a#clearallbtnlink {
 
 @media (min-width: 768px) {
   div[id^=group-] .question-container .question-code-container {
-    color: #1b5072;
+    color: #1a5632;
     font-size: 13px;
     font-weight: 400;
     position: absolute;
@@ -1352,7 +1351,7 @@ a#clearallbtnlink {
     left: -50px;
     background-color: #fff;
     padding: 3px;
-    border: 1px solid #1b5072;
+    border: 1px solid #1a5632;
     border-radius: 2px;
     box-sizing: border-box;
   }
@@ -1362,7 +1361,7 @@ div[id^=group-] .question-container .question-title-container {
   padding-top: 15px;
   padding-bottom: 10px;
   background-color: transparent;
-  color: #1b5072;
+  color: #1a5632;
   font-weight: 700;
   letter-spacing: -.25px;
 }
@@ -1414,7 +1413,7 @@ div[id^=group-] .question-container .save-all hr {
 h3.group-name {
   margin-top: 10.5px;
   margin-bottom: 35px;
-  color: #1b5072;
+  color: #1a5632;
   font-size: 20px;
   letter-spacing: 1px;
   text-transform: uppercase;
@@ -1430,7 +1429,7 @@ h3.group-name {
 }
 
 .no-more-tables thead {
-  color: #1b5072;
+  color: #1a5632;
 }
 
 .no-more-tables tr {
@@ -1446,7 +1445,7 @@ h3.group-name {
 }
 
 .no-more-tables .answertext {
-  color: #1b5072;
+  color: #1a5632;
 }
 
 .no-more-tables .header_row th {
@@ -1499,7 +1498,7 @@ h3.group-name {
   height: 7px;
   left: 5px;
   top: 5px;
-  background-color: #1b5072;
+  background-color: #1a5632;
 }
 
 .radio label::before {
@@ -1546,7 +1545,7 @@ h3.group-name {
 
 #navigator-container #moveprevbtn {
   background-color: #f7f4f4;
-  color: #1b5072;
+  color: #1a5632;
 }
 
 #navigator-container #moveprevbtn:hover {
@@ -1554,11 +1553,11 @@ h3.group-name {
 }
 
 #navigator-container #movenextbtn {
-  background-color: #1b5072;
+  background-color: #1a5632;
 }
 
 #navigator-container #movenextbtn:hover {
-  background-color: #113349;
+  background-color: #0e2f1b;
 }
 
 .maxwidth-600 .answer-container {
