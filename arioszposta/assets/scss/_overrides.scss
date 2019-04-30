@@ -17,11 +17,11 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
 //main layout
 .outerframe.container {
     margin-top: 0;
+    padding-left: 0;
+    padding-right: 0;
 }
 @include sdf-minBp(3) {
     .outerframe.container { 
-        padding-left: 0;
-        padding-right: 0;
         background-color: $c-gray2;
         box-sizing: border-box;
     }
@@ -74,14 +74,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
         padding-right: 5px;
     }
     @include sdf-minBp(3) {
+        & > li {
+            margin-right: 2px;
+            &:last-of-type {
+                margin-right: 0px;
+                // outline: 4px solid red;
+            }
+        }
         & > li > a {
-            background-color: $c-gray2;
-            border-left: 1px solid $c-gray1;
-            border-right: 1px solid $c-gray1;
-            border-radius: 3px 3px 0px 0px;
+            background-color: $c-mpgreen3;
+            // border-left: 1px solid $c-gray1;
+            // border-right: 1px solid $c-gray1;
+            // border-radius: 3px 3px 0px 0px;
             padding-top: 6px;
             padding-bottom: 6px;
             position: relative;
+            color: #fff;
             // bottom: 2px;
             transition:
                     .2s background-color ease-in,
@@ -89,7 +97,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
                     .1s bottom linear;
             &:hover {
                 color: #fff;
-                background-color: $c-blue;
+                background-color: $c-mpgreen1;
                 // bottom: 2px;
                 transition:
                     .1s background-color ease-out,
@@ -107,13 +115,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
     }
 }
 .navbar-default {
-    background-color: $c-gray1; 
+    background-color: #fff; 
+    @include sdf-maxBp(3) {
+        border-bottom: 1px solid $c-mpgreen1;
+    }
 }
 #navbar {
     @include sdf-minBp(3) {
+        background-color: $c-mpgreen2;
         width: 100%;
         padding-left: 30px;
-        padding-right: 30px;
+        padding-right: 13px;
     }
 }
 
@@ -154,7 +166,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
 
 //mobile nav button
 .navbar-default .navbar-toggle {
-    background-color: $c-blue;
+    background-color: $c-mpgreen2;
     border: 0;
 }
 
@@ -179,7 +191,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
 
 //logo 15  736x119 49.0666666667x7.93333333333
 .mfb-logo a {
-    font-size: .28em;
+    font-size: .13em;
     background-size: 41.33333333333333em;
     width: 41.33333333333333em;
     height: 21em;
@@ -187,22 +199,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
     white-space: nowrap;
     overflow: hidden;
     display: block;
-    // background: url('../files/magyarpostalogo.png');
-    background: url('https://bezdi.github.io/arioszposta/thesite/assets/files/magyarpostalogo.png');
+    background-image: url('../files/magyarpostalogo.png');
+    // background: url('https://bezdi.github.io/arioszposta/thesite/assets/files/magyarpostalogo.png');
     background-repeat: no-repeat;
     position: relative;
     top: 11px;
     @include sdf-minBp(3) {
-        top: 18px;
-        font-size: .25em;
+        top: 14px;
+        font-size: .14em;
     }
     @include sdf-minBp(5) {
-        top: 22px;
-        font-size: .3em;
+        top: 17px;
+        font-size: .18em;
     }
     @include sdf-minBp(7) {
-        font-size: 0.37em;
-        top: 36px;
+        font-size: 0.21em;
+        top: 14px;
     }
 }
 
@@ -211,21 +223,26 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
     display: none;
     text-align: right;
     letter-spacing: -1px;
+    padding-right: 0;
     h2 {
+        margin: 0;
         line-height: 1.30;
-        color: $c-blue;
+        color: $c-mpgreen1;
         letter-spacing: -.5px;
         font-size: 16px;
+        width: 100%;
     }
     @include sdf-minBp(3) {
-        display: block;
+        display: flex;
+        align-items: center;
+        height: 70px;
         h2 {
         }
     }
     @include sdf-minBp(5) {
+        height: 93px;
         h2 {
-            font-size: 23px;
-            margin-top: 24px;
+            font-size: 20px;
 
         }
     }

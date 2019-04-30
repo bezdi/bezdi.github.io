@@ -7,15 +7,15 @@ div[id^=group-] {
         // display: none;
         .question-code-container {
             @include sdf-minBp(3) {
-                color: $c-mpgreen1;
+                color: $c-mpgreen2;
                 font-size: 13px;
                 font-weight: 400;
                 position: absolute;
                 top: 0;
                 left: -50px;
-                background-color: #fff;
+                // background-color: #fff;
                 padding: 3px;
-                border: 1px solid $c-mpgreen1;
+                // border: 1px solid $c-mpgreen1;
                 border-radius: 2px;
                 box-sizing: border-box;
             }
@@ -158,7 +158,7 @@ h3.group-name {
     height: 7px;
     left: 5px;
     top: 5px;
-    background-color: $c-mpgreen2;
+    background-color: $c-mpgreen1;
 }
 .radio label::before {
     border-color: $c-gray4;

@@ -1020,12 +1020,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .outerframe.container {
   margin-top: 0;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 @media (min-width: 768px) {
   .outerframe.container {
-    padding-left: 0;
-    padding-right: 0;
     background-color: #edebeb;
     box-sizing: border-box;
   }
@@ -1078,19 +1078,23 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 @media (min-width: 768px) {
+  .navbar-default .navbar-nav > li {
+    margin-right: 2px;
+  }
+  .navbar-default .navbar-nav > li:last-of-type {
+    margin-right: 0px;
+  }
   .navbar-default .navbar-nav > li > a {
-    background-color: #edebeb;
-    border-left: 1px solid #f7f4f4;
-    border-right: 1px solid #f7f4f4;
-    border-radius: 3px 3px 0px 0px;
+    background-color: #15894a;
     padding-top: 6px;
     padding-bottom: 6px;
     position: relative;
+    color: #fff;
     transition: .2s background-color ease-in, .2s color ease-in, .1s bottom linear;
   }
   .navbar-default .navbar-nav > li > a:hover {
     color: #fff;
-    background-color: #1b5072;
+    background-color: #1a5632;
     transition: .1s background-color ease-out, .2s color ease-out, .15s bottom linear;
   }
 }
@@ -1103,14 +1107,21 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .navbar-default {
-  background-color: #f7f4f4;
+  background-color: #fff;
+}
+
+@media (max-width: 767px) {
+  .navbar-default {
+    border-bottom: 1px solid #1a5632;
+  }
 }
 
 @media (min-width: 768px) {
   #navbar {
+    background-color: #3dae2b;
     width: 100%;
     padding-left: 30px;
-    padding-right: 30px;
+    padding-right: 13px;
   }
 }
 
@@ -1147,7 +1158,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .navbar-default .navbar-toggle {
-  background-color: #1b5072;
+  background-color: #3dae2b;
   border: 0;
 }
 
@@ -1171,7 +1182,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .mfb-logo a {
-  font-size: .28em;
+  font-size: .13em;
   background-size: 41.33333333333333em;
   width: 41.33333333333333em;
   height: 21em;
@@ -1179,7 +1190,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   white-space: nowrap;
   overflow: hidden;
   display: block;
-  background: url("https://bezdi.github.io/arioszposta/thesite/assets/files/magyarpostalogo.png");
+  background-image: url("../files/magyarpostalogo.png");
   background-repeat: no-repeat;
   position: relative;
   top: 11px;
@@ -1187,22 +1198,22 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 @media (min-width: 768px) {
   .mfb-logo a {
-    top: 18px;
-    font-size: .25em;
+    top: 14px;
+    font-size: .14em;
   }
 }
 
 @media (min-width: 992px) {
   .mfb-logo a {
-    top: 22px;
-    font-size: .3em;
+    top: 17px;
+    font-size: .18em;
   }
 }
 
 @media (min-width: 1200px) {
   .mfb-logo a {
-    font-size: 0.37em;
-    top: 36px;
+    font-size: 0.21em;
+    top: 14px;
   }
 }
 
@@ -1210,25 +1221,32 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   display: none;
   text-align: right;
   letter-spacing: -1px;
+  padding-right: 0;
 }
 
 .mfb-slogan h2 {
+  margin: 0;
   line-height: 1.30;
-  color: #1b5072;
+  color: #1a5632;
   letter-spacing: -.5px;
   font-size: 16px;
+  width: 100%;
 }
 
 @media (min-width: 768px) {
   .mfb-slogan {
-    display: block;
+    display: flex;
+    align-items: center;
+    height: 70px;
   }
 }
 
 @media (min-width: 992px) {
+  .mfb-slogan {
+    height: 93px;
+  }
   .mfb-slogan h2 {
-    font-size: 23px;
-    margin-top: 24px;
+    font-size: 20px;
   }
 }
 
@@ -1343,15 +1361,13 @@ a#clearallbtnlink {
 
 @media (min-width: 768px) {
   div[id^=group-] .question-container .question-code-container {
-    color: #1a5632;
+    color: #3dae2b;
     font-size: 13px;
     font-weight: 400;
     position: absolute;
     top: 0;
     left: -50px;
-    background-color: #fff;
     padding: 3px;
-    border: 1px solid #1a5632;
     border-radius: 2px;
     box-sizing: border-box;
   }
@@ -1498,7 +1514,7 @@ h3.group-name {
   height: 7px;
   left: 5px;
   top: 5px;
-  background-color: #3dae2b;
+  background-color: #1a5632;
 }
 
 .radio label::before {
