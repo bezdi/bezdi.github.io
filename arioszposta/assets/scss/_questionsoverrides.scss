@@ -27,7 +27,7 @@ div[id^=group-] {
             padding-top: 15px;
             padding-bottom: 10px;
             background-color: transparent;
-            color: $c-mpgreen2;
+            color: $c-mpgreen1;
             font-weight: 700;
             letter-spacing: -.25px;
             .text-danger.asterisk {
@@ -215,10 +215,10 @@ h3.group-name {
         }
     }
     #movenextbtn {
-        background-color: $c-mpgreen2;
+        background-color: $c-mpgreen1;
         &:hover {
             // background-color: darken($c-mpgreen2, 10%);
-            background-color: $c-mpgreen1;
+            background-color: $c-mpgreen2   ;
         }
     }
 }

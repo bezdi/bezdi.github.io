@@ -1361,7 +1361,7 @@ div[id^=group-] .question-container .question-title-container {
   padding-top: 15px;
   padding-bottom: 10px;
   background-color: transparent;
-  color: #3dae2b;
+  color: #1a5632;
   font-weight: 700;
   letter-spacing: -.25px;
 }
@@ -1553,11 +1553,11 @@ h3.group-name {
 }
 
 #navigator-container #movenextbtn {
-  background-color: #3dae2b;
+  background-color: #1a5632;
 }
 
 #navigator-container #movenextbtn:hover {
-  background-color: #1a5632;
+  background-color: #3dae2b;
 }
 
 .maxwidth-600 .answer-container {
