@@ -339,6 +339,9 @@ input[type="text"].text {
     top: 2px;
     margin-bottom: 11px;
 }
+.checkbox label::after {
+    color: $c-mpgreen2;
+}
 
 
 

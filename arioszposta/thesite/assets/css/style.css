@@ -1660,6 +1660,10 @@ input[type="text"].text {
   margin-bottom: 11px;
 }
 
+.checkbox label::after {
+  color: #3dae2b;
+}
+
 .changeorder-col-last2 .multiple-choice-container > div:last-child > .row {
   display: flex;
   flex-wrap: wrap;
