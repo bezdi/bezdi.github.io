@@ -215,10 +215,10 @@ h3.group-name {
         }
     }
     #movenextbtn {
-        background-color: $c-mpgreen1;
+        background-color: $c-mpgreen3;
         &:hover {
             // background-color: darken($c-mpgreen2, 10%);
-            background-color: $c-mpgreen2   ;
+            background-color: $c-mpgreen1;
         }
     }
 }
