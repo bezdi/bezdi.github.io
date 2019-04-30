@@ -1172,8 +1172,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 .mfb-logo a {
   font-size: .28em;
-  width: 41;
-  height: 21;
+  width: 41em;
+  height: 21em;
   text-indent: 200%;
   white-space: nowrap;
   overflow: hidden;
