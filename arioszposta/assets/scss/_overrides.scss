@@ -47,19 +47,17 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
 
 #main-col { //fs 15
     background-color: #fff;
-    margin-top: 3.5em;
-    margin-top: 2.5em;
-    padding-top: 1em;
-    padding-bottom: 1em;
-    @include sdf-minBp(3) {
-        background: #fff url('../files/earmark.svg') top right no-repeat;
-        background-size: 45px;
-        background-size: 3em;
-    }
+    // margin-top: 3.5em;
+    // margin-top: 2.5em;
+    // padding-top: 1em;
+    // padding-bottom: 1em;
+    // @include sdf-minBp(3) {
+    //     background: #fff url('../files/earmark.svg') top right no-repeat;
+    //     background-size: 45px;
+    //     background-size: 3em;
+    // }
 }
 #outerframeContainer {
-    -webkit-box-shadow: 0px 0px 67px 0px rgba(0,0,0,0.3);
-    -moz-box-shadow: 0px 0px 67px 0px rgba(0,0,0,0.3);
     box-shadow: 0px 0px 67px 0px rgba(0,0,0,0.3);
     padding-bottom: 15px;
     min-height: inherit;
