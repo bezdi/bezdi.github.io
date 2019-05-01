@@ -4315,7 +4315,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   box-shadow: none;
   background: linear-gradient(to right, #3dae2b 0%, #27814b 100%);
   border-radius: 0 6px 6px 0;
-  color: #d1f2cc;
+  color: white;
   font-size: 12px;
   letter-spacing: .5px;
   padding-top: 0.39em;
@@ -4739,7 +4739,13 @@ input[type="text"].text {
 }
 
 .checkbox label::after {
-  color: #3dae2b;
+  background-color: #3dae2b;
+  border-radius: 3px;
+  color: #fff;
+  width: 17px;
+  height: 17px;
+  border-radius: 3px;
+  font-size: 11px;
 }
 
 .changeorder-col-last2 .multiple-choice-container > div:last-child > .row {

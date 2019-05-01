@@ -357,8 +357,26 @@ input[type="text"].text {
     margin-bottom: 11px;
 }
 .checkbox label::after {
-    color: $c-mpgreen2;
+    // color: $c-mpgreen2;
+    background-color: $c-mpgreen2;
+    border-radius: 3px;
+    color: #fff;
+    width: 17px;
+    height: 17px;
+    border-radius: 3px;
+    font-size: 11px;
+    
 }
+// .checkbox label::before {
+//     // color: $c-mpgreen2;
+//     font-family: "FontAwesome";
+//     content: "\f00c";
+//     background-color: $c-mpgreen2;
+//     border-radius: 3px;
+//     color: #fff;
+//     width: 17px;
+//     height: 17px;
+// }
 
 
 
