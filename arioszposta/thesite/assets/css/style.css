@@ -147,30 +147,35 @@
 .fa-rotate-90 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=1)";
   -webkit-transform: rotate(90deg);
+  -ms-transform: rotate(90deg);
   transform: rotate(90deg);
 }
 
 .fa-rotate-180 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2)";
   -webkit-transform: rotate(180deg);
+  -ms-transform: rotate(180deg);
   transform: rotate(180deg);
 }
 
 .fa-rotate-270 {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=3)";
   -webkit-transform: rotate(270deg);
+  -ms-transform: rotate(270deg);
   transform: rotate(270deg);
 }
 
 .fa-flip-horizontal {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=0, mirror=1)";
   -webkit-transform: scale(-1, 1);
+  -ms-transform: scale(-1, 1);
   transform: scale(-1, 1);
 }
 
 .fa-flip-vertical {
   -ms-filter: "progid:DXImageTransform.Microsoft.BasicImage(rotation=2, mirror=1)";
   -webkit-transform: scale(1, -1);
+  -ms-transform: scale(1, -1);
   transform: scale(1, -1);
 }
 
@@ -179,8 +184,7 @@
 :root .fa-rotate-270,
 :root .fa-flip-horizontal,
 :root .fa-flip-vertical {
-  -webkit-filter: none;
-          filter: none;
+  filter: none;
 }
 
 .fa-stack {
@@ -3934,6 +3938,7 @@ label {
   min-height: 100%;
   word-wrap: break-word;
   -webkit-hyphens: auto;
+  -moz-hyphens: auto;
   -ms-hyphens: auto;
   -o-hyphens: auto;
   hyphens: auto;
@@ -4311,10 +4316,13 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   font-weight: 700;
   border-radius: 2px;
   height: 24px;
+  -webkit-box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.46);
+  -moz-box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.46);
   box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.46);
 }
 
 .progress .progress-bar {
+  -webkit-box-shadow: none;
   box-shadow: none;
   background-color: rgba(255, 255, 255, 0.85);
   color: magenta;
@@ -4790,5 +4798,3 @@ input[type="text"].text {
 .tesztClass {
   color: chocolate;
 }
-
-/*# sourceMappingURL=maps/style.css.map */
