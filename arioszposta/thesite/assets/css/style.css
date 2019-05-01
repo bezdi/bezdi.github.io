@@ -4303,28 +4303,28 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   background-color: #edebeb;
   font-weight: 700;
   border-radius: 0;
-  height: 24px;
+  height: 22px;
   box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.46);
 }
 
 .progress .progress-bar {
   position: relative;
-  top: 3px;
   text-align: right;
   padding-right: 4px;
-  height: 18px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  background-color: #27814b;
-  border-radius: 0 4px 4px 0;
+  background: linear-gradient(to right, #3dae2b 0%, #27814b 100%);
+  border-radius: 0 6px 6px 0;
   color: #d1f2cc;
   font-size: 12px;
   letter-spacing: .5px;
   padding-top: 0.39em;
+  line-height: 12px;
 }
 
 .progress .progress-bar[aria-valuenow="0"] {
   background-color: transparent;
+  background: none;
   border-left: 2px solid #27814b;
   padding-left: 15px;
   color: #1a5632;

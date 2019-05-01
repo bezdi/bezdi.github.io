@@ -337,27 +337,30 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
     background-color:$c-gray2;
     font-weight: 700;
     border-radius: 0;
-    height: 24px;
+    height: 22px;
     box-shadow: inset 0px 2px 4px -2px rgba(0,0,0,0.46);
     // padding: 0 15px;
 }
 .progress .progress-bar {
     position: relative;
-    top: 3px;
+    // top: 3px;
     text-align: right;
     padding-right: 4px;
-    height: 18px;
+    // height: 18px;
     -webkit-box-shadow: none;
     box-shadow: none;
-    background-color: lighten($c-mpgreen1, 11%);
-    border-radius: 0 4px 4px 0;
+    // background-color: lighten($c-mpgreen1, 11%);
+    background: linear-gradient(to right, #3dae2b 0%,#27814b 100%);
+    border-radius: 0 6px 6px 0;
     // border-radius: 10px;
     color: lighten($c-mpgreen2, 45%);
     font-size: 12px;
     letter-spacing: .5px;
     padding-top: 0.39em;
+    line-height: 12px;
     &[aria-valuenow="0"] {
         background-color: transparent;
+        background: none;
         border-left: 2px solid lighten($c-mpgreen1, 11%);
         padding-left: 15px;
         color: $c-mpgreen1;
