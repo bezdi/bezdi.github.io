@@ -4132,8 +4132,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   }
   .navbar-default .navbar-nav > li > a {
     background-color: #15894a;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding-top: 4px;
+    padding-bottom: 4px;
     position: relative;
     color: #fff;
     transition: .2s background-color ease-in, .2s color ease-in, .1s bottom linear;
@@ -4222,10 +4222,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   }
 }
 
-#topContainer {
-  background-color: magenta;
-}
-
 #topContainer.jumbotron {
   left: 0;
   right: 0;
@@ -4278,7 +4274,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   margin: 0;
   line-height: 1.30;
   color: #1a5632;
-  letter-spacing: -.5px;
+  letter-spacing: .3px;
   font-size: 16px;
   width: 100%;
 }
@@ -4307,34 +4303,45 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 #topContainer.jumbotron {
   margin-bottom: 0;
-  padding-top: 10px;
+  padding-top: 0;
   padding-bottom: 10px;
+  padding-left: 0;
+  padding-right: 0;
 }
 
 .progress {
-  background-color: #d5d5d5;
+  background-color: #edebeb;
   font-weight: 700;
-  border-radius: 2px;
+  border-radius: 0;
   height: 24px;
-  -webkit-box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.46);
-  -moz-box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.46);
   box-shadow: inset 0px 2px 4px -2px rgba(0, 0, 0, 0.46);
 }
 
 .progress .progress-bar {
+  position: relative;
+  top: 2px;
+  text-align: right;
+  padding-right: 4px;
+  height: 20px;
   -webkit-box-shadow: none;
   box-shadow: none;
-  background-color: rgba(255, 255, 255, 0.85);
-  color: magenta;
-  font-size: 14px;
+  background-color: #27814b;
+  border-radius: 0 4px 4px 0;
+  color: #d1f2cc;
+  font-size: 12px;
   letter-spacing: .5px;
-  padding-top: 0.51em;
+  padding-top: 0.39em;
 }
 
 .progress .progress-bar[aria-valuenow="0"] {
   background-color: transparent;
-  border-left: 2px solid rgba(255, 255, 255, 0.85);
+  border-left: 2px solid #27814b;
   padding-left: 15px;
+  color: #1a5632;
+}
+
+.progress .progress-bar[aria-valuenow="100"] {
+  border-radius: 0;
 }
 
 .questionvalidcontainer .text-info {
@@ -4388,6 +4395,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   .navbar-fixed-top, .navbar-fixed-bottom {
     right: calc(50% - 375px);
     left: calc(50% - 375px);
+    box-shadow: 0px 0px 24px 3px rgba(0, 0, 0, 0.2);
   }
 }
 
