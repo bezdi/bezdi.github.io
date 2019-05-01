@@ -4130,6 +4130,9 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   .navbar-default .navbar-nav > li {
     margin-right: 2px;
   }
+  .navbar-default .navbar-nav > li:last-of-type {
+    margin-right: 0px;
+  }
   .navbar-default .navbar-nav > li > a {
     background-color: #15894a;
     padding-top: 4px;
@@ -4140,7 +4143,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   }
   .navbar-default .navbar-nav > li > a:hover {
     color: #fff;
-    background-color: #1a5632;
+    background-color: #227142;
     transition: .1s background-color ease-out, .2s color ease-out, .15s bottom linear;
   }
 }
