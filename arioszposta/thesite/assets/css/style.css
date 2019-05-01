@@ -4251,15 +4251,8 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 @media (min-width: 992px) {
   .mfb-logo a {
-    top: 17px;
-    font-size: .18em;
-  }
-}
-
-@media (min-width: 1200px) {
-  .mfb-logo a {
-    font-size: 0.21em;
-    top: 14px;
+    top: 11px;
+    font-size: .155em;
   }
 }
 
@@ -4284,12 +4277,6 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
     display: flex;
     align-items: center;
     height: 70px;
-  }
-}
-
-@media (min-width: 992px) {
-  .mfb-slogan {
-    height: 93px;
   }
   .mfb-slogan h2 {
     font-size: 20px;

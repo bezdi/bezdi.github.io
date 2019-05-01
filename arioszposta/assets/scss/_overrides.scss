@@ -281,12 +281,12 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
         font-size: .14em;
     }
     @include sdf-minBp(5) {
-        top: 17px;
-        font-size: .18em;
+        top: 11px;
+        font-size: .155em;
     }
     @include sdf-minBp(7) {
-        font-size: 0.21em;
-        top: 14px;
+        // font-size: 0.21em;
+        // top: 14px;
     }
 }
 
@@ -309,14 +309,15 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
         align-items: center;
         height: 70px;
         h2 {
+            font-size: 20px;
         }
     }
     @include sdf-minBp(5) {
-        height: 93px;
-        h2 {
-            font-size: 20px;
+        // height: 78px;
+        // h2 {
+        //     font-size: 20px;
 
-        }
+        // }
     }
 }
 
