@@ -84,6 +84,7 @@ function css() {
         .pipe(gulp.dest("./thesite/assets/css/"))
         .pipe(rename({ suffix: ".min" }))
         .pipe(postcss([autoprefixer(), cssnano()]))
+        // .pipe(postcss([autoprefixer()]))
         .pipe(sourcemaps.write('./maps'))
         .pipe(gulp.dest("./thesite/assets/css/"))
         .pipe(browsersync.stream());

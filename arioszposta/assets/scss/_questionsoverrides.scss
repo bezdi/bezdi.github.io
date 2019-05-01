@@ -190,12 +190,12 @@ h3.group-name {
     }
     #moveprevbtn, #movenextbtn {
         font-size: 15px; 
-        padding: 6px 15px;
+        padding: 8px 15px;
         border-radius: 3px;
         border: 0;
 
         transition:
-            .2s background-color ease-in,
+            .3s background-color ease-in,
             .2s color ease-in,
             .1s bottom linear;
         &:hover {
@@ -216,9 +216,26 @@ h3.group-name {
     }
     #movenextbtn {
         background-color: $c-mpgreen3;
-        &:hover {
-            // background-color: darken($c-mpgreen2, 10%);
-            background-color: $c-mpgreen1;
+        font-weight: 700;
+        padding: 8px 20px;
+        box-shadow: inset 0px -4px 15px 0px rgba(26,86,50,.5);
+        &::after {
+            font-family: "FontAwesome";
+             content: "\f178";
+             margin-left: 10px;
+             font-size: 16px;
+             color: lighten($c-mpgreen2, $amount: 10%);
+             transition: .2s color ease-out;
+             position: relative;
+             top: 1px;
+            }
+            &:hover {
+                background-color: $c-mpgreen1;
+                &::after {
+                    // color: $c-mpgreen1;
+                    // color: #fff;
+
+            }
         }
     }
 }
@@ -227,7 +244,7 @@ h3.group-name {
 //custom classes - - - - - - - - - - - - - - - - - - - - - -
 //maxwidth- classes
 .maxwidth {
-    &-600 .answer-container{
+    &-600 .answer-container{ 
         max-width: 600px;
     }
     &-700 .answer-container{
