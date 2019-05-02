@@ -445,3 +445,20 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
 a#clearallbtnlink {
     display: none;
 }
+
+//welcome page
+#welcome-container > .col-sm-12 h1 {
+    text-align: left;
+    font-size: 32px;
+    // padding-left:15px;
+    // padding-right:15px;
+
+}
+@include sdf-minBp(4) {
+    #welcome-container > .col-sm-12, .survey-welcome {
+        // padding-left: 20%;
+        // padding-right: 20%;
+        // margin-left:  0;
+        // margin-right:  0;
+    }
+}

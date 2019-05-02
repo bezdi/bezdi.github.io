@@ -4407,6 +4407,11 @@ a#clearallbtnlink {
   display: none;
 }
 
+#welcome-container > .col-sm-12 h1 {
+  text-align: left;
+  font-size: 32px;
+}
+
 @media (min-width: 768px) {
   div[id^=group-] .question-container .question-code-container {
     color: #3dae2b;
@@ -4483,7 +4488,8 @@ h3.group-name {
   text-transform: uppercase;
 }
 
-.answer > p, .answer > div {
+.answer > p,
+.answer > div {
   padding-left: 0;
   padding-right: 0;
 }
@@ -4520,11 +4526,13 @@ h3.group-name {
   font-weight: 700;
 }
 
-.no-more-tables .header_separator, .no-more-tables .dual_scale_separator {
+.no-more-tables .header_separator,
+.no-more-tables .dual_scale_separator {
   position: relative;
 }
 
-.no-more-tables .header_separator::before, .no-more-tables .dual_scale_separator::before {
+.no-more-tables .header_separator::before,
+.no-more-tables .dual_scale_separator::before {
   content: ' ';
   display: block;
   background-color: #edebeb;
@@ -4536,7 +4544,8 @@ h3.group-name {
 }
 
 @media (max-width: 803px) {
-  .no-more-tables .header_separator::before, .no-more-tables .dual_scale_separator::before {
+  .no-more-tables .header_separator::before,
+  .no-more-tables .dual_scale_separator::before {
     width: 100%;
     height: 1px;
     left: 0;
@@ -4545,7 +4554,8 @@ h3.group-name {
 }
 
 @media (min-width: 803px) {
-  .no-more-tables .header_separator::before, .no-more-tables .dual_scale_separator::before {
+  .no-more-tables .header_separator::before,
+  .no-more-tables .dual_scale_separator::before {
     top: 0;
     bottom: 0;
     width: 1px;
@@ -4569,7 +4579,8 @@ h3.group-name {
   border-color: #9B9393;
 }
 
-.radio-list .answer-item, .checkbox-item {
+.radio-list .answer-item,
+.checkbox-item {
   margin-bottom: 10px;
 }
 
@@ -4585,7 +4596,7 @@ h3.group-name {
 
 #navigator-container {
   background-color: #fff;
-  padding-bottom: 5px;
+  padding-bottom: 20px;
 }
 
 #navigator-container hr {
@@ -4595,7 +4606,8 @@ h3.group-name {
   margin-right: 15px;
 }
 
-#navigator-container #moveprevbtn, #navigator-container #movenextbtn {
+#navigator-container #moveprevbtn,
+#navigator-container #movenextbtn {
   font-size: 15px;
   padding: 8px 15px;
   border-radius: 3px;
@@ -4603,7 +4615,8 @@ h3.group-name {
   transition: .3s background-color ease-in, .2s color ease-in, .1s bottom linear;
 }
 
-#navigator-container #moveprevbtn:hover, #navigator-container #movenextbtn:hover {
+#navigator-container #moveprevbtn:hover,
+#navigator-container #movenextbtn:hover {
   transition: .1s background-color ease-out, .2s color ease-out, .15s bottom linear;
 }
 
@@ -4619,8 +4632,14 @@ h3.group-name {
 #navigator-container #movenextbtn {
   background-color: #15894a;
   font-weight: 700;
-  padding: 8px 20px;
+  padding: 4px 6px;
   box-shadow: inset 0px -4px 15px 0px rgba(26, 86, 50, 0.5);
+}
+
+@media (min-width: 321px) {
+  #navigator-container #movenextbtn {
+    padding: 8px 20px;
+  }
 }
 
 #navigator-container #movenextbtn::after {
@@ -4654,12 +4673,14 @@ h3.group-name {
   max-width: 900px;
 }
 
-.change-order .multiple-choice-container, .change-order .radio-list {
+.change-order .multiple-choice-container,
+.change-order .radio-list {
   display: flex;
   flex-wrap: wrap;
 }
 
-.change-order .multiple-choice-container > div:nth-last-of-type(2), .change-order .radio-list > div:nth-last-of-type(2) {
+.change-order .multiple-choice-container > div:nth-last-of-type(2),
+.change-order .radio-list > div:nth-last-of-type(2) {
   order: 2;
 }
 
