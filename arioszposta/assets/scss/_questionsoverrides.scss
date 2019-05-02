@@ -528,3 +528,13 @@ div[id^=group-] .question-container .question-code-container {
 .form-control, .checkbox label::before, .radio label::before {
     border: 1px solid $c-mpgreen2;
 }
+
+
+//numeric input
+.answer-item.text-item.numeric-item.withsuffix {
+    display: flex;
+    align-items: center;
+    span {
+        margin-left: 15px;
+    }
+}

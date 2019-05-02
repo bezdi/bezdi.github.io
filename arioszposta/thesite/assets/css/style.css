@@ -4417,16 +4417,6 @@ a#clearallbtnlink {
   padding-bottom: 20px;
 }
 
-.answer-item.text-item.numeric-item.withsuffix {
-  outline: 2px solid salmon;
-  display: flex;
-  align-items: center;
-}
-
-.answer-item.text-item.numeric-item.withsuffix span {
-  margin-left: 15px;
-}
-
 @media (min-width: 768px) {
   div[id^=group-] .question-container .question-code-container {
     color: #fff;
@@ -4841,4 +4831,13 @@ input[type="text"].text {
 
 .form-control, .checkbox label::before, .radio label::before {
   border: 1px solid #3dae2b;
+}
+
+.answer-item.text-item.numeric-item.withsuffix {
+  display: flex;
+  align-items: center;
+}
+
+.answer-item.text-item.numeric-item.withsuffix span {
+  margin-left: 15px;
 }
