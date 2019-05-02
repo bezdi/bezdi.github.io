@@ -3,4 +3,5 @@
 .Spotlight-V100
 .Trashes
 node_modules/
-ariosz-posta/node_modules/
+arioszposta/node_modules/
+arioszposta/thesite/*.html
