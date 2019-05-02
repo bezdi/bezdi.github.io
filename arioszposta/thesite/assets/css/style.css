@@ -4075,7 +4075,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 
 @media (min-width: 768px) {
   .outerframe.container {
-    background-color: #edebeb;
+    background-color: #f1f3f1;
     box-sizing: border-box;
   }
   #main-row {
@@ -4300,7 +4300,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 .progress {
-  background-color: #edebeb;
+  background-color: #f5f7f4;
   font-weight: 700;
   border-radius: 0;
   height: 22px;
@@ -4507,11 +4507,11 @@ h3.group-name {
 }
 
 .no-more-tables .array1 {
-  background-color: #fbfafa;
+  background-color: #fafbfa;
 }
 
 .no-more-tables .array2 {
-  background-color: #f7f6f6;
+  background-color: #fcfcfc;
 }
 
 .no-more-tables .answertext {
@@ -4535,7 +4535,7 @@ h3.group-name {
 .no-more-tables .dual_scale_separator::before {
   content: ' ';
   display: block;
-  background-color: #edebeb;
+  background-color: #f1f3f1;
   position: absolute;
   top: 0;
   left: 0;
@@ -4576,7 +4576,7 @@ h3.group-name {
 }
 
 .radio label::before {
-  border-color: #9B9393;
+  border-color: #8f908e;
 }
 
 .radio-list .answer-item,
@@ -4601,7 +4601,7 @@ h3.group-name {
 
 #navigator-container hr {
   border: 0;
-  border-top: 1px solid #edebeb;
+  border-top: 1px solid #f1f3f1;
   margin-left: 15px;
   margin-right: 15px;
 }
@@ -4621,12 +4621,12 @@ h3.group-name {
 }
 
 #navigator-container #moveprevbtn {
-  background-color: #f7f4f4;
+  background-color: #f5f7f4;
   color: #1a5632;
 }
 
 #navigator-container #moveprevbtn:hover {
-  background-color: #ece5e5;
+  background-color: #e8ece5;
 }
 
 #navigator-container #movenextbtn {
@@ -4822,4 +4822,8 @@ input[type="text"].text {
 
 .tesztClass {
   color: chocolate;
+}
+
+.form-control, .checkbox label::before, .radio label::before {
+  border: 1px solid #3dae2b;
 }

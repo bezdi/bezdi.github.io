@@ -521,3 +521,10 @@ div[id^=group-] .question-container .question-code-container {
 .tesztClass {
     color: chocolate;
 }
+
+
+//coloring
+
+.form-control, .checkbox label::before, .radio label::before {
+    border: 1px solid $c-mpgreen2;
+}
