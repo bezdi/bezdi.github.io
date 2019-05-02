@@ -4412,9 +4412,18 @@ a#clearallbtnlink {
   font-size: 32px;
 }
 
+.error {
+  margin-bottom: 0;
+  padding-bottom: 20px;
+}
+
+.answer-item.text-item.numeric-item.withsuffix {
+  outline: 2px solid red;
+}
+
 @media (min-width: 768px) {
   div[id^=group-] .question-container .question-code-container {
-    color: #3dae2b;
+    color: #fff;
     font-size: 13px;
     font-weight: 400;
     position: absolute;

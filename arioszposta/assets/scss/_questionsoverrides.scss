@@ -9,7 +9,7 @@ div[id^=group-] {
         // display: none;
         .question-code-container {
             @include sdf-minBp(3) {
-                color: $c-mpgreen2;
+                color: #fff;
                 font-size: 13px;
                 font-weight: 400;
                 position: absolute;

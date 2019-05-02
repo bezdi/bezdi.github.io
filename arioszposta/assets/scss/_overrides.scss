@@ -462,3 +462,12 @@ a#clearallbtnlink {
         // margin-right:  0;
     }
 }
+
+.error {
+    margin-bottom: 0;
+    padding-bottom: 20px;
+}
+
+.answer-item.text-item.numeric-item.withsuffix {
+    outline: 2px solid red;
+}
