@@ -469,5 +469,10 @@ a#clearallbtnlink {
 }
 
 .answer-item.text-item.numeric-item.withsuffix {
-    outline: 2px solid red;
+    outline: 2px solid salmon;
+    display: flex;
+    align-items: center;
+    span {
+        margin-left: 15px;
+    }
 }
