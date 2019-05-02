@@ -528,6 +528,9 @@ div[id^=group-] .question-container .question-code-container {
 .form-control, .checkbox label::before, .radio label::before {
     border: 1px solid $c-mpgreen2;
 }
+.form-control:focus {
+    border-color: $c-mpgreen1;
+}
 
 
 //numeric input

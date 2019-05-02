@@ -4230,7 +4230,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
   right: 0;
 }
 
-.mfb-logo a {
+.mp-logo a {
   font-size: .13em;
   background-size: 41.33333333333333em;
   width: 41.33333333333333em;
@@ -4246,14 +4246,14 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6 {
 }
 
 @media (min-width: 768px) {
-  .mfb-logo a {
+  .mp-logo a {
     top: 14px;
     font-size: .14em;
   }
 }
 
 @media (min-width: 992px) {
-  .mfb-logo a {
+  .mp-logo a {
     top: 11px;
     font-size: .155em;
   }
@@ -4831,6 +4831,10 @@ input[type="text"].text {
 
 .form-control, .checkbox label::before, .radio label::before {
   border: 1px solid #3dae2b;
+}
+
+.form-control:focus {
+  border-color: #1a5632;
 }
 
 .answer-item.text-item.numeric-item.withsuffix {
