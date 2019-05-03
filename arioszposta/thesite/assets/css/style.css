@@ -4854,6 +4854,6 @@ input[type="text"].text {
   margin-left: 15px;
 }
 
-th.aswertext {
-  color: red !important;
+th.answertext {
+  font-weight: 400;
 }
