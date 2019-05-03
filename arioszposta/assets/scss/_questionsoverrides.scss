@@ -557,6 +557,7 @@ div[id^=group-] .question-container .question-code-container {
     align-items: center;
     span {
         margin-left: 15px;
+        white-space: nowrap;
     }
 }
 
@@ -570,3 +571,17 @@ tr.array1 th {
     font-weight: 400;
 
 }
+
+// .questions-list.numeric-list {
+//     tr {
+//         display: flex;
+//     }
+//     td {
+//         flex-grow: 1;
+//         display: inline-block;
+//         &:first-child {
+//             text-align: right;
+//             // ma-width: 400px;
+//         }
+//     }
+// }
