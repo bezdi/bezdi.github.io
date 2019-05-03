@@ -4853,3 +4853,7 @@ input[type="text"].text {
 .answer-item.text-item.numeric-item.withsuffix span {
   margin-left: 15px;
 }
+
+th.aswertext {
+  color: red !important;
+}
