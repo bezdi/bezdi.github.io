@@ -4857,3 +4857,7 @@ input[type="text"].text {
 th.answertext {
   font-weight: 400;
 }
+
+tr th.array1 {
+  font-weight: 400;
+}
