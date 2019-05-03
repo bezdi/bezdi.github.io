@@ -258,6 +258,15 @@ h3.group-name {
         }
     }
 
+    #movesubmitbtn {
+        background-color: $c-mpgreen3;
+        border-color: $c-mpgreen3;
+        box-shadow: inset 0px -4px 15px 0px rgba(26, 86, 50, .5);
+        &:hover {
+            background-color: $c-mpgreen1;
+        }   
+    }
+
     #movenextbtn {
         background-color: $c-mpgreen3;
         // font-weight: 500;
@@ -265,6 +274,7 @@ h3.group-name {
 
         padding: 4px 6px;
         box-shadow: inset 0px -4px 15px 0px rgba(26, 86, 50, .5);
+        transition: .2s color ease-out;
 
         @include sdf-minBp(321) {
             padding: 8px 20px;

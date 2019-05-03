@@ -4642,11 +4642,22 @@ h3.group-name {
   background-color: #e8ece5;
 }
 
+#navigator-container #movesubmitbtn {
+  background-color: #15894a;
+  border-color: #15894a;
+  box-shadow: inset 0px -4px 15px 0px rgba(26, 86, 50, 0.5);
+}
+
+#navigator-container #movesubmitbtn:hover {
+  background-color: #1a5632;
+}
+
 #navigator-container #movenextbtn {
   background-color: #15894a;
   font-weight: 700;
   padding: 4px 6px;
   box-shadow: inset 0px -4px 15px 0px rgba(26, 86, 50, 0.5);
+  transition: .2s color ease-out;
 }
 
 @media (min-width: 321px) {
