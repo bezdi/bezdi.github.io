@@ -299,7 +299,7 @@ h1, h2, h3, h4, h5, h6, .h1, .h2, .h3, .h4, .h5, .h6  {
     h2 {
         margin: 0;
         line-height: 1.30;
-        color: $c-mpgreen1;
+        color: $c-mpgreen3;
         letter-spacing: .3px;
         font-size: 16px;
         width: 100%;
@@ -466,6 +466,11 @@ a#clearallbtnlink {
 .error {
     margin-bottom: 0;
     padding-bottom: 20px;
+}
+
+
+#yii-flash-message {
+    margin-top: 1em;
 }
 
 

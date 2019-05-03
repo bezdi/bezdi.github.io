@@ -4417,6 +4417,10 @@ a#clearallbtnlink {
   padding-bottom: 20px;
 }
 
+#yii-flash-message {
+  margin-top: 1em;
+}
+
 @media (min-width: 768px) {
   div[id^=group-] .question-container .question-code-container {
     color: #fff;
@@ -4493,8 +4497,8 @@ div[id^=group-] .question-container .save-all hr {
 }
 
 h3.group-name {
-  margin-top: 10.5px;
-  margin-bottom: 35px;
+  margin-top: 10px;
+  margin-bottom: 20px;
   color: #1a5632;
   font-size: 20px;
   letter-spacing: 1px;
