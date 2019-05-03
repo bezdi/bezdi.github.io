@@ -47,6 +47,14 @@ div[id^=group-] {
                 font-size: 15px;
             }
 
+            .note {
+                margin-top: -.5em;
+                font-weight: 400;
+                font-size: 13.5px;
+                text-transform: uppercase;
+                letter-spacing: .5px;
+            } 
+
             @include sdf-minBp(3) {
                 font-size: 17px;
                 letter-spacing: .05px;
