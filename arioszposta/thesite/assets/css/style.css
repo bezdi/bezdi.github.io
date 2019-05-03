@@ -4876,3 +4876,7 @@ th.answertext {
 tr.array1 th {
   font-weight: 400;
 }
+
+.onlytext {
+  font-weight: 400;
+}
