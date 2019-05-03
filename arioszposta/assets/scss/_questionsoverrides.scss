@@ -592,3 +592,10 @@ tr.array1 th {
 .onlytext  .question-text {
     font-weight: 400;
 }
+.numeric-multi.shortnumber {
+    tr.answer-item {
+        td:nth-child(2) {
+            max-width: 150px;
+        }
+    }
+}
