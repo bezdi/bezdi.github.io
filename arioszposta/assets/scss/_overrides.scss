@@ -477,6 +477,10 @@ a#clearallbtnlink {
     .btn-default {
         background-color: $c-gray1;
         color: $c-mpgreen1;
+        border-color: $c-gray1;
+        &:hover {
+            border-color: darken($c-gray1, 5%);
+        }
     }
 }
 

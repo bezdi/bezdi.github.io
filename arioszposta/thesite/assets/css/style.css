@@ -4424,6 +4424,11 @@ a#clearallbtnlink {
 .modal-dialog .btn-default {
   background-color: #f5f7f4;
   color: #1a5632;
+  border-color: #f5f7f4;
+}
+
+.modal-dialog .btn-default:hover {
+  border-color: #e8ece5;
 }
 
 @media (min-width: 768px) {
