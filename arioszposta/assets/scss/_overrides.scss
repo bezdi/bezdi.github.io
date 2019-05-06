@@ -473,4 +473,11 @@ a#clearallbtnlink {
     margin-top: 1em;
 }
 
+.modal-dialog {
+    .btn-default {
+        background-color: $c-gray1;
+        color: $c-mpgreen1;
+    }
+}
+
 
