@@ -480,6 +480,7 @@ a#clearallbtnlink {
         border-color: $c-gray1;
         &:hover {
             border-color: darken($c-gray1, 5%);
+            background-color: darken($c-gray1, 5%);
         }
     }
 }

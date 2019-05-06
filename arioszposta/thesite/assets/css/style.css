@@ -4429,6 +4429,7 @@ a#clearallbtnlink {
 
 .modal-dialog .btn-default:hover {
   border-color: #e8ece5;
+  background-color: #e8ece5;
 }
 
 @media (min-width: 768px) {
