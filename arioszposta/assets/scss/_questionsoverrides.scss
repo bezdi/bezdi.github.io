@@ -590,7 +590,8 @@ tr.array1 th {
 // }
 
 .onlytext  .question-text {
-    font-weight: 400;
+    // font-weight: 400;
+    color: $c-mpgreen3;
 }
 .numeric-multi.shortnumber {
     tr.answer-item {
