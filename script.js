@@ -15,7 +15,7 @@ addEventListener('DOMContentLoaded', (event) => {
     let accButton =document.getElementById('acc');
     let decButton =document.getElementById('dec');
     let zoomButton =document.getElementById('zoom');
-    let timeout = 80;
+    let timeout = 160;
     timeoutDisplay.innerHTML = timeout;
     canvas.setAttribute("width", width/zoom*resScale)
     canvas.setAttribute("height", height/zoom*resScale)
