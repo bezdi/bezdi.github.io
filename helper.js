@@ -19,6 +19,29 @@ const generateUniverse = (width, height, chance) => {
     return data;
 }
 
+const drawVerticalLine = (universe) => {
+    const col = Math.floor(universe[0].length * Math.random())
+    for (let i = 0; i < universe.length; i++) {
+        for (let j = 0; j < universe[i].length; j++) {
+            if (col == j) {
+                universe[i][j] = 1;
+            }
+        }
+    }
+    return universe;
+}
+
+const drawHorizontalLine = (universe) => {
+
+    const row = Math.floor(universe.length * Math.random())
+
+    for (let i = 0; i < universe[row].length; i++) {
+        universe[row][i] = 1;
+    }
+    return universe;
+
+}
+
 
 const countNeighbours = (universe, cellX, cellY) => {
     let universeHeight = universe.length;
@@ -65,7 +88,7 @@ const calculateNextGen = (universe) => {
 
     for (let y = 0; y < universe.length; y++) {
         for (let x = 0; x < universe[y].length; x++) {
-            newUniverse[y][x] = decidingTheFaithOfTheCell(universe[y][x],countNeighbours(universe, x, y));
+            newUniverse[y][x] = decidingTheFaithOfTheCell(universe[y][x], countNeighbours(universe, x, y));
         }
     }
 
@@ -73,17 +96,14 @@ const calculateNextGen = (universe) => {
 }
 
 
-const drawUniverseToCanvas = (universe,canvas,ctx,resScale) => {
+const drawUniverseToCanvas = (universe, canvas, ctx, resScale) => {
     for (let y = 0; y < universe.length; y++) {
         for (let x = 0; x < universe[y].length; x++) {
             universe[y][x] ? ctx.fillStyle = "#096A5F" : ctx.fillStyle = "#FFEACE";
-            ctx.fillRect(x*resScale, y*resScale, 1*resScale, 1*resScale);
+            ctx.fillRect(x * resScale, y * resScale, 1 * resScale, 1 * resScale);
         }
     }
 }
-
-
-
 
 
 export {
@@ -91,4 +111,6 @@ export {
     countNeighbours,
     calculateNextGen,
     drawUniverseToCanvas,
+    drawVerticalLine,
+    drawHorizontalLine
 };

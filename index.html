@@ -4,55 +4,79 @@
     <meta charset="UTF-8">
     <title>Game of Life</title>
     <script type="module" src="script.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
     <style>
         body {
             background-color: #FFEACE;
             color: #5E6278;
             user-select: none;
         }
+
         .info {
-            margin-right: auto;
             font-family: monospace;
             text-align: left;
-        }
-        .details {
-            font-size: 13px;
             color: #8F7E92;
+            margin-left: auto;
         }
+
         h1 {
+            font-family: monospace;
             font-size: 15px;
+            margin: 0;
         }
+
         h1 span {
             font-weight: normal;
         }
+
         h1 a, h1 a:visited {
             color: #009179;
         }
-        .controls {
+
+        header {
             width: 640px;
             margin: 16px auto;
             display: flex;
-            justify-content: center;
         }
-        .controls > a {
-            font-size: 30px;
+
+        nav {
+            width: 640px;
+            margin-left: auto;
+            margin-right: auto;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        nav > a {
+            font-size: 28px;
             padding: 16px;
-            margin-left: 32px;
-            width: 32px;
-            height: 32px;
+            width: 28px;
+            height: 28px;
             border-radius: 4px;
             display: block;
             border: 1px solid #E2C0BB;
             cursor: pointer;
             transition: background-color ease-in-out .2s;
             position: relative;
+            margin: 0 8px;
         }
-        .controls > a i {
+
+        nav > a:first-child {
+            margin-left: 0;
+        }
+
+        nav > a:last-child {
+            margin-right: 0;
+        }
+
+        nav > a i {
             font-style: normal;
             position: relative;
             bottom: 10px;
+            text-align: center;
         }
-        .controls > a > span {
+
+        nav > a > span {
             font-weight: normal;
             font-size: 13px;
             font-family: monospace;
@@ -65,17 +89,20 @@
             right: 4px;
             bottom: 4px
         }
-        .controls > a:hover {
+
+        nav > a:hover {
             background-color: #FFF6E8;
         }
+
         canvas {
             margin-top: 32px;
-            border:2px dashed #E2C0BB;
+            border: 2px dashed #E2C0BB;
             border-radius: 2px;
             margin-left: auto;
             margin-right: auto;
             display: block;
         }
+
         #counter {
             color: #C35354;
         }
@@ -88,22 +115,27 @@
         style="width: 640px; height: 480px;">
     Your browser does not support the canvas element.
 </canvas>
-<div class="controls">
-    <div class="info">
-        <h1><a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> <span>by Bezdi</span> </h1>
-        <div class="details">
-            refresh interval: <span id="timeout">100</span> ms
-        </div>
-
+<header>
+    <div class="title">
+        <h1><a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> <span>by Bezdi</span></h1>
     </div>
 
-    <a id="dec"><span>Slower</span><i>🐢</i></a>
-    <a id="acc"><span>Faster</span><i>🐇</i></a>
-    <a id="zoom"><span>1x</span><i>🔍</i></a>
-    <a id="reset"><span id="counter">0</span><i>💥</i></a>
-</div>
+    <div class="info">
+        refresh interval: <span id="timeout">100</span> ms
+    </div>
+</header>
+<nav>
+    <a id="btn-zoom"><span>1x</span><i>◼️</i></a>
+    <a id="btn-play"><span id="counter">0</span><i>▶️</i></a>
+    <a id="btn-random"><span>Random</span><i>💥</i></a>
+    <a id="btn-hori"><span>Hori.</span><i>⎯</i></a>
+    <a id="btn-verti"><span>Verti.</span><i>⎸</i></a>
+    <a id="btn-dec"><span>Slower</span><i>🐢</i></a>
+    <a id="btn-acc"><span>Faster</span><i>🐇</i></a>
+    <a id="btn-clear"><span>Reset</span><i>0️⃣</i></a>
 
 
+</nav>
 
 
 </body>
