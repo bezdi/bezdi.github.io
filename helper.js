@@ -99,7 +99,8 @@ const calculateNextGen = (universe) => {
 const drawUniverseToCanvas = (universe, canvas, ctx, resScale) => {
     for (let y = 0; y < universe.length; y++) {
         for (let x = 0; x < universe[y].length; x++) {
-            universe[y][x] ? ctx.fillStyle = "#096A5F" : ctx.fillStyle = "#FFEACE";
+            // universe[y][x] ? ctx.fillStyle = "#096A5F" : ctx.fillStyle = "#FFEACE";
+            universe[y][x] ? ctx.fillStyle = "#096A5F" : ctx.fillStyle = "rgba(255,234,206,.2)";
             ctx.fillRect(x * resScale, y * resScale, 1 * resScale, 1 * resScale);
         }
     }
