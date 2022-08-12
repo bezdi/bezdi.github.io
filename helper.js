@@ -20,9 +20,9 @@ const generateUniverse = (width, height, chance) => {
 }
 
 
-const countNeighbours = (matrix, cellX, cellY) => {
-    let h = matrix.length;
-    let w = matrix[0].length;
+const countNeighbours = (universe, cellX, cellY) => {
+    let universeHeight = universe.length;
+    let universeWidth = universe[0].length;
     let numOfNeighbours = 0;
     let neighbourRelCoordinates = [[-1, -1], [0, -1], [1, -1], [-1, 0], [1, 0], [-1, 1], [0, 1], [1, 1]]
 
@@ -31,8 +31,8 @@ const countNeighbours = (matrix, cellX, cellY) => {
         let neighbourX = cellX + neighbourRelCoordinates[i][0];
         let neighbourY = cellY + neighbourRelCoordinates[i][1];
 
-        if ((neighbourX >= 0 && neighbourX <= w - 1) && (neighbourY >= 0 && neighbourY <= h - 1)) {
-            numOfNeighbours += matrix.at(neighbourY).at(neighbourX)
+        if ((neighbourX >= 0 && neighbourX <= universeWidth - 1) && (neighbourY >= 0 && neighbourY <= universeHeight - 1)) {
+            numOfNeighbours += universe[neighbourY][neighbourX]
         }
     }
 
