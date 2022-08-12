@@ -1,16 +1,107 @@
 <!DOCTYPE html>
-<html lang="hu">
-  <head>
+<html lang="en">
+<head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.85, user-scalable=1">
-    <link rel="stylesheet" href="https://bezdi.github.io/css/styleinject.css">
-    <title>bezdi.github.io</title>
-  </head>
-  <body>
-      <!-- <h1>
-        <a href="http://bezdi.github.io">
-          <span>bezdi</span>.github.io
-        </a>
-      </h1> -->
-  </body>
+    <title>Game of Life</title>
+    <script type="module" src="script.js"></script>
+    <style>
+        body {
+            background-color: #FFEACE;
+            color: #5E6278;
+            user-select: none;
+        }
+        .info {
+            margin-right: auto;
+            font-family: monospace;
+            text-align: left;
+        }
+        .details {
+            font-size: 13px;
+            color: #8F7E92;
+        }
+        h1 {
+            font-size: 15px;
+        }
+        h1 span {
+            font-weight: normal;
+        }
+        .controls {
+            width: 640px;
+            margin: 16px auto;
+            display: flex;
+            justify-content: center;
+        }
+        .controls a {
+            font-size: 30px;
+            padding: 16px;
+            margin-left: 32px;
+            width: 32px;
+            height: 32px;
+            border-radius: 4px;
+            display: block;
+            border: 1px solid #E2C0BB;
+            cursor: pointer;
+            transition: background-color ease-in-out .2s;
+            position: relative;
+        }
+        .controls a i {
+            font-style: normal;
+            position: relative;
+            bottom: 10px;
+        }
+        .controls a > span {
+            font-weight: normal;
+            font-size: 13px;
+            font-family: monospace;
+            text-align: center;
+            display: block;
+            margin: 0 auto;
+            pointer-events: none;
+            position: absolute;
+            left: 4px;
+            right: 4px;
+            bottom: 4px
+        }
+        .controls a:hover {
+            background-color: #FFF6E8;
+        }
+        canvas {
+            margin-top: 32px;
+            border:2px dashed #E2C0BB;
+            border-radius: 2px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+        }
+        #counter {
+            color: #C35354;
+        }
+
+    </style>
+</head>
+<body>
+
+<canvas id="golCanvas"
+        style="width: 640px; height: 480px;">
+    Your browser does not support the canvas element.
+</canvas>
+<div class="controls">
+    <div class="info">
+        <h1>Game of Life <span>by Bezdi</span> </h1>
+        <div class="details">
+            refresh interval: <span id="timeout">100</span> ms
+        </div>
+
+    </div>
+
+    <a id="dec"><span>Slower</span><i>🐢</i></a>
+    <a id="acc"><span>Faster</span><i>🐇</i></a>
+    <a id="zoom"><span>1x</span><i>🔍</i></a>
+    <a id="reset"><span id="counter">0</span><i>💥</i></a>
+</div>
+
+
+
+
+</body>
 </html>
