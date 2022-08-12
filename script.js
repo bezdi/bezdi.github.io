@@ -77,7 +77,9 @@ addEventListener('DOMContentLoaded', (event) => {
         timeout = Math.max(timeout*0.5,10);
         timeoutDisplay.innerHTML = timeout;
         clearInterval(interval)
-        interval = setInterval(execution, timeout)
+        if (play) {
+            interval = setInterval(execution, timeout)
+        }
 
     })
 
@@ -85,7 +87,9 @@ addEventListener('DOMContentLoaded', (event) => {
         timeout = Math.min(timeout*2,1280);
         timeoutDisplay.innerHTML = timeout;
         clearInterval(interval)
-        interval = setInterval(execution, timeout)
+        if (play) {
+            interval = setInterval(execution, timeout)
+        }
     })
 
     verticalButton.addEventListener('click',(e)=>{
