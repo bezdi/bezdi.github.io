@@ -13,14 +13,14 @@ addEventListener('DOMContentLoaded', (event) => {
     // Display Object
     let d = {
         canvas: document.getElementById('golCanvas'),
-        cellSize: 2,
+        cellSize: parseInt(localStorage.getItem('cellSize')) || 2,
         width: 257,
         height: 145,
         resScale: 8,
-        transition: false,
+        transition: JSON.parse(localStorage.getItem('transition')) || false,
         play: true,
         interval: null,
-        timeout: 160,
+        timeout: parseInt(localStorage.getItem('timeout')) || 160,
         timeoutMin: 10,
         timeoutMax: 1280,
         colors: {
@@ -109,6 +109,7 @@ addEventListener('DOMContentLoaded', (event) => {
     }
     const accelerate = () => {
         d.timeout = Math.max(d.timeout * 0.5, 10);
+        localStorage.setItem('timeout',d.timeout)
         setTimeoutDisplay();
         clearInterval(d.interval)
         setSpeedButtonsState()
@@ -118,6 +119,7 @@ addEventListener('DOMContentLoaded', (event) => {
     }
     const decelerate = () => {
         d.timeout = Math.min(d.timeout * 2, 1280);
+        localStorage.setItem('timeout',d.timeout)
         setTimeoutDisplay()
         clearInterval(d.interval)
         setSpeedButtonsState()
@@ -145,14 +147,17 @@ addEventListener('DOMContentLoaded', (event) => {
         d.canvas.setAttribute("height", d.height / d.cellSize * d.resScale)
         universe = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, 0)
         reset();
+
     }
     const toggleResolution = () => {
         d.cellSize === 1 ? setResolution(2) : setResolution(1);
+        localStorage.setItem('cellSize',d.cellSize)
     }
     const toggleRenderMode = () => {
         d.transition = !d.transition;
         modeButton.classList = "";
         modeButton.classList.add(d.transition ? "trans" : "sharp");
+        localStorage.setItem('transition',JSON.stringify(d.transition))
     }
 
 
