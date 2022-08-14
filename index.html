@@ -5,60 +5,121 @@
     <title>Game of Life</title>
     <script type="module" src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/8.0.1/normalize.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
+        :root {
+            --siteWidth: 1024px;
+            --transition-time: .15s;
+            --color-bg: #FFEACE;
+            --color-text: #5E6278;
+            --color-text-dim: #998b9b;
+            --color-border: #E2C0BB;
+            --color-link: #009179;
+            --color-link-visited: #009179;
+            --color-button-bg: #fdefdc;
+            --color-button-bg-hover: #FFF6E8;
+            --color-icon: #009179;
+            --color-icon-hover: #01a189;
+            --color-focus-outline: #009179;
+            --font-family: 'Teko', sans-serif;
+        }
+
+        *:focus {
+            outline-color: var(--color-focus-outline);
+        }
+
         body {
-            background-color: #FFEACE;
-            color: #5E6278;
-            user-select: none;
+            background-color: var(--color-bg);
+            color: var(--color-text);
+            padding: 12px;
         }
 
         .info {
-            font-family: monospace;
+            font-family: var(--font-family);
+            color: var(--color-text-dim);
+            font-weight: 300;
+            font-size: 18px;
             text-align: left;
-            color: #8F7E92;
             margin-left: auto;
+            user-select: none;
+        }
+
+        .info span {
+            color: black;
+            color: var(--color-text);
+            font-weight: 400;
+        }
+
+        canvas {
+            width: 100%;
+            max-width: var(--siteWidth);
+            border: 2px solid var(--color-border);
+            border-radius: 3px;
+            margin-left: auto;
+            margin-right: auto;
+            display: block;
+            box-sizing: border-box;
         }
 
         h1 {
-            font-family: monospace;
-            font-size: 15px;
+            font-weight: 500;
+            letter-spacing: 0.02em;
+            font-family:  var(--font-family);;
+            font-size: 22px;
             margin: 0;
+            user-select: none;
         }
 
         h1 span {
-            font-weight: normal;
+            font-weight: 300;
         }
 
         h1 a, h1 a:visited {
-            color: #009179;
+            color: var(--color-link);
+            text-decoration: none;
+        }
+
+        h1 a:focus {
+            outline: 0;
+            text-decoration: underline;
         }
 
         header {
-            width: 640px;
+            width: 100%;
+            max-width: var(--siteWidth);
             margin: 16px auto;
             display: flex;
         }
 
         nav {
-            width: 640px;
+            width: 100%;
+            max-width: var(--siteWidth);
+            overflow: auto;
             margin-left: auto;
             margin-right: auto;
             display: flex;
-            justify-content: space-between;
+            justify-content: flex-start;
+            padding-bottom: 8px;
         }
 
         nav > a {
+            appearance: none;
             font-size: 28px;
             padding: 16px;
             width: 28px;
             height: 28px;
-            border-radius: 4px;
+            border-radius: 8px;
             display: block;
-            border: 1px solid #E2C0BB;
+            border-bottom: 2px solid var(--color-border);
+            background-color: var(--color-button-bg);
             cursor: pointer;
-            transition: background-color ease-in-out .2s;
+            transition: background-color easerole = "button" tabindex = "1" -in-out var(--transition-time);
             position: relative;
             margin: 0 8px;
+            flex-shrink: 0;
+            user-select: none;
         }
 
         nav > a:first-child {
@@ -70,16 +131,23 @@
         }
 
         nav > a i {
+            display: block;
             font-style: normal;
-            position: relative;
-            bottom: 10px;
+            position: absolute;
+            top: 5px;
+            left: 14px;
             text-align: center;
+            width: 32px;
+            height: 32px;
         }
 
         nav > a > span {
             font-weight: normal;
-            font-size: 13px;
-            font-family: monospace;
+            font-size: 16px;
+            text-transform: uppercase;
+            font-family:  var(--font-family);
+            font-weight: 300;
+            letter-spacing: 0.05em;
             text-align: center;
             display: block;
             margin: 0 auto;
@@ -87,52 +155,236 @@
             position: absolute;
             left: 4px;
             right: 4px;
-            bottom: 4px
+            bottom: 2px
         }
 
         nav > a:hover {
-            background-color: #FFF6E8;
+            background-color: var(--color-button-bg-hover);
         }
 
-        canvas {
-            margin-top: 32px;
-            border: 2px dashed #E2C0BB;
-            border-radius: 2px;
-            margin-left: auto;
-            margin-right: auto;
-            display: block;
+        nav > a:focus {
+            /*outline: none;*/
+            outline-offset: -3px;
+            outline-width: 1px;
+            box-shadow: none;
+            /*outline-style: dashed;*/
+        }
+
+        nav > a.disabled {
+            opacity: 0.5;
+            pointer-events: none;
         }
 
         #counter {
             color: #C35354;
         }
 
+
+        g[class^="i-"] {
+            color: var(--color-icon);
+            transition: color ease-in-out var(--transition-time);
+        }
+
+        nav > a:hover g[class^="i-"] {
+            color: var(--color-icon-hover);
+        }
+
+        .i-pause, .i-play {
+            display: none;
+        }
+
+        .pause .i-play {
+            display: block;
+        }
+
+        .play .i-pause {
+            display: block;
+        }
+
+        #timeout {
+            transition: color ease-in-out var(--transition-time);
+        }
+
+        #btn-zoom .i-highres, #btn-zoom .i-lowres {
+            display: none;
+        }
+
+        #btn-zoom.res2 .i-lowres {
+            display: block;
+        }
+
+        #btn-zoom.res1 .i-highres {
+            display: block;
+        }
+
+        #btn-mode .i-sharp, #btn-mode .i-trans {
+            display: none;
+        }
+        #btn-mode.trans .i-trans {
+            display: block;
+        }
+        #btn-mode.sharp .i-sharp {
+            display: block;
+        }
+
+
     </style>
 </head>
 <body>
 
-<canvas id="golCanvas"
-        style="width: 640px; height: 480px;">
+
+<canvas id="golCanvas">
     Your browser does not support the canvas element.
 </canvas>
+
+
 <header>
     <div class="title">
-        <h1><a href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a> <span>by Bezdi</span></h1>
+        <h1><a tabindex="1" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a>
+            <span>by Bezdi</span></h1>
     </div>
 
     <div class="info">
-        refresh interval: <span id="timeout">100</span> ms
+        refresh interval: <span id="timeout">100 ms</span>
     </div>
 </header>
 <nav>
-    <a id="btn-zoom"><span>1x</span><i>◼️</i></a>
-    <a id="btn-play"><span id="counter">0</span><i>▶️</i></a>
-    <a id="btn-random"><span>Random</span><i>💥</i></a>
-    <a id="btn-hori"><span>Hori.</span><i>⎯</i></a>
-    <a id="btn-verti"><span>Verti.</span><i>⎸</i></a>
-    <a id="btn-dec"><span>Slower</span><i>🐢</i></a>
-    <a id="btn-acc"><span>Faster</span><i>🐇</i></a>
-    <a id="btn-clear"><span>Reset</span><i>0️⃣</i></a>
+    <a role="button" tabindex="5" id="btn-zoom">
+        <span>1x</span>
+        <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+                <g class="i-lowres">
+                    <path d="M6 6h10v10H6z" class="Rectangle 1"/>
+                    <path d="M16 16h10v10H16z" class="Rectangle 2"/>
+                </g>
+                <g class="i-highres">
+                    <g class="Group 5">
+                        <g class="Frame 2">
+                            <g class="Group 1">
+                                <path d="M6 6h5v5H6z" class="Rectangle 1"/>
+                                <path d="M11 11h5v5h-5z" class="Rectangle 2"/>
+                            </g>
+                            <g class="Group 3">
+                                <path d="M6 16h5v5H6z" class="Rectangle 1"/>
+                                <path d="M11 21h5v5h-5z" class="Rectangle 2"/>
+                            </g>
+                            <g class="Group 2">
+                                <path d="M16 6h5v5h-5z" class="Rectangle 1"/>
+                                <path d="M21 11h5v5h-5z" class="Rectangle 2"/>
+                            </g>
+                            <g class="Group 4">
+                                <path d="M16 16h5v5h-5z" class="Rectangle 1"/>
+                                <path d="M21 21h5v5h-5z" class="Rectangle 2"/>
+                            </g>
+                        </g>
+                    </g>
+                </g>
+            </svg>
+        </i>
+    </a>
+    <a role="button" tabindex="5" id="btn-play" class="">
+        <span id="counter">0</span>
+        <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+                <g class="i-play">
+                    <path d="M23.282 14.66 10.554 6.273C9.469 5.556 8 6.336 8 7.622v16.753c0 1.307 1.469 2.065 2.554 1.349l12.728-8.387c.957-.612.957-2.045 0-2.677Z"
+                          class="Vector"/>
+                </g>
+                <g class="i-pause">
+                    <path d="M13.24 6H8.78c-.42 0-.78.358-.78.82v18.36c0 .442.34.82.78.82h4.44c.42 0 .78-.358.78-.82V6.82c0-.462-.34-.82-.76-.82Zm11 0h-4.46c-.42 0-.78.358-.78.82v18.36c0 .442.34.82.78.82h4.44c.42 0 .78-.358.78-.82V6.82c0-.462-.34-.82-.76-.82Z"
+                          class="Vector"/>
+                </g>
+            </svg>
+        </i>
+    </a>
+    <a role="button" tabindex="5" id="btn-mode" class="">
+        <span>Mode</span>
+        <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+                <g class="i-sharp">
+                    <path d="M12 12h8v8h-8z" class="Rectangle 8"/>
+                </g>
+                <g class="i-trans">
+                    <path d="M12 12h8v8h-8z" class="Rectangle 8"/>
+                    <path d="M20 12h8v8h-8z" class="Rectangle 9" opacity=".4"/>
+                    <path d="M12 20h8v8h-8z" class="Rectangle 15" opacity=".6"/>
+                    <path d="M20 4h8v8h-8z" class="Rectangle 14" opacity=".2"/>
+                    <path d="M4 12h8v8H4z" class="Rectangle 12" opacity=".4"/>
+                    <path d="M4 4h8v8H4z" class="Rectangle 13" opacity=".2"/>
+                    <path d="M12 4h8v8h-8z" class="Rectangle 10" opacity=".6"/>
+                    <path d="M4 20h8v8H4z" class="Rectangle 11" opacity=".2"/>
+                </g>
+            </svg>
+
+        </i>
+    </a>
+    <a role="button" tabindex="5" id="btn-random">
+        <span>Random</span>
+        <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+                <g class="i-random">
+                    <path d="M6.875 4v2.875H4V4h2.875Zm17.25 5.75v2.875H27v8.625h-5.75v-2.875h2.875V15.5H21.25v2.875h-2.875v2.875H15.5v-2.875h-2.875v2.875H9.75v2.875H6.875V21.25H4V9.75h2.875v2.875h5.75V9.75h-5.75V6.875H9.75V4h2.875v2.875H15.5V4h8.625v2.875H27V9.75h-2.875ZM9.75 15.5H6.875v2.875H9.75V15.5Zm11.5-8.625h-2.875v5.75H15.5V15.5h2.875v-2.875h2.875v-5.75Zm-8.625 17.25H9.75V27h5.75v-5.75h-2.875v2.875Zm5.75 0V27h2.875v-5.75h-2.875v2.875ZM4 27h2.875v-2.875H4V27Zm20.125 0H27v-2.875h-2.875V27Z"
+                          class="Vector"/>
+                </g>
+            </svg>
+        </i>
+    </a>
+    <a role="button" tabindex="5" id="btn-hori">
+        <span>Hori.</span>
+        <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+                <g class="i-hori">
+                    <path d="M3 14h26v4H3z" class="Rectangle 3"/>
+                </g>
+            </svg>
+
+        </i>
+    </a>
+    <a role="button" tabindex="5" id="btn-verti">
+        <span>Verti.</span>
+        <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+                <g class="i-verti">
+                    <path d="M18 3v26h-4V3z" class="Rectangle 3"/>
+                </g>
+            </svg>
+        </i>
+    </a>
+    <a role="button" tabindex="5" id="btn-clear">
+        <span>Clear</span>
+        <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+                <g class="i-erase">
+                    <path d="m17.125 7.525-5.2 5.2 7.2 7.2 5.2-5.2c.7-.7.7-1.9 0-2.6l-4.6-4.6c-.7-.7-1.9-.7-2.6 0Z"
+                          class="Vector"/>
+                    <path fill-rule="evenodd"
+                          d="M16.599 5.908c1.202-1.21 3.224-1.21 4.426 0l5.073 5.104c1.203 1.21 1.203 3.244 0 4.454l-8.263 8.315h9.137V26H11.203a1.1 1.1 0 0 1-.78-.325l-4.521-4.55c-1.203-1.21-1.203-3.244 0-4.454L16.599 5.908ZM14.716 23.78l9.822-9.884c.342-.343.342-.972 0-1.316l-5.072-5.104c-.341-.344-.966-.344-1.308 0L7.461 18.24c-.34.344-.34.973 0 1.316l4.199 4.225h3.056Z"
+                          class="Vector (Stroke)" clip-rule="evenodd"/>
+                </g>
+            </svg>
+        </i>
+    </a>
+    <a role="button" tabindex="5" id="btn-dec">
+        <span>Slower</span>
+        <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+                <g class="i-slow">
+                    <path d="m14.426 10.15.5 2.122c-1.032 1.047-2.08 2.503-2.607 3.938-.166.451.267.674.397.359.558-1.363 1.525-2.898 2.548-3.943l3.338 1.298c-.237.678-.296 1.565-.296 2.452.002.864.084 1.68.114 2.302.018.373.515.354.499.028-.032-.628-.116-1.464-.116-2.33-.002-.901.083-1.793.3-2.369l3.814-.496c1.06 1.061 2.05 2.812 2.515 4.202.109.326.56.106.477-.143-.48-1.425-1.443-3.157-2.554-4.305l1.764-1.694c.967.418 1.935 1.478 2.62 2.56.387.61.68 1.222.864 1.707.09.238.136.48.175.712.066-.027.13-.05.196-.076.474-.191.805.016.961.39.199.474-.089.82-.455.977-6.971 2.979-13.18 2.545-16.304.69-3.18-1.89-4.015-4.102-4.155-4.66-.095-.386.14-.66.481-.76.414-.122.806.021.966.399.23-.565.769-1.514 1.227-1.955.716-.69 1.69-1.243 2.73-1.404Zm4.186-1.145c.482-.016.967.004 1.446.059 1.915.22 3.687 1.002 4.555 2.278l-1.716 1.69-3.945.513-3.542-1.377-.51-2.178c.997-.606 2.333-.938 3.713-.985Z" class="Vector"/>
+                    <path d="M4.785 10.933a.645.645 0 0 0-.649.642c0 .356.29.643.65.643a.645.645 0 0 0 .646-.643.645.645 0 0 0-.647-.642ZM5.323 9c.414-.007.82.081 1.179.264 1.04.529 1.358 1.394 1.588 2.306.296 1.162-.067 1.857.112 2.623.171.735 1.101 3.137 4.442 5.178 3.003 1.834 8.328 2.266 14.508.247.426-.138.835-.081.965.687.153.9.407 1.901.737 2.665.145.341.195.63.089.886-.104.254-.335.409-.608.532-.891.4-1.71.572-2.638.603a.98.98 0 0 1-.804-.36 1.514 1.514 0 0 1-.3-.742 14.902 14.902 0 0 1-.148-1.987c-.002-.24-.128-.367-.378-.236-1.41.73-3.143 1.096-4.918 1.035-1.797-.06-3.484-.567-4.801-1.398-.24-.151-.425-.017-.428.2-.011.71.03 1.452.14 2.154.059.376.039.676-.133.9-.169.226-.44.312-.742.356-.98.144-1.845.118-2.775-.147a1.213 1.213 0 0 1-.824-.73 1.889 1.889 0 0 1-.091-.891c.124-1.17.057-2.545.66-3.794.167-.343.176-.521-.324-.59-2.733-.372-5.96-2.096-7.15-3.674-.226-.3-.441-.68-.525-1.065-.067-.308-.044-.64.43-.446.558.225 1.196.2 1.808-.037.301-.116.16-.413-.145-.306-.504.159-1.068.05-1.581-.13-.415-.148-.586-.505-.646-.844-.084-.468.082-.958.322-1.32.422-.644 1.017-1.277 1.743-1.634A2.87 2.87 0 0 1 5.323 9Z" class="Vector"/>
+                </g>
+            </svg>
+        </i>
+    </a>
+    <a role="button" tabindex="5" id="btn-acc">
+        <span>Faster</span>
+        <i>
+            <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+                <g class="i-fast">
+                    <path d="M9.25 7.768c.942-.138 1.742-.734 2.071-1.606 1.554-3.67 3.295-1.789 3.295-1.789s5.083-3.349 3.86.413c-.895 2.798-3.577 3.716-4.895 4.037-.518.138-.895.55-.989 1.01-.235 1.88 1.46 2.706 2.306 2.568 10.685-1.284 10.732 7.248 10.732 7.982.423.413.8.872 1.035 1.33.612 1.285.518 4.45-1.412 1.33a16.052 16.052 0 0 0-.565-.917c-1.035.688-2.494.505-2.494.505l.094.596c.094.505-.33 1.01-.847 1.055l-2.448.138c-1.741.55-3.67 1.147-3.718-.459-.047-1.605 4.518-1.33 4.518-1.33-.47-1.285-.33-2.11-1.13-2.34l-2.682-.734c-.377-.091-.753.138-.8.505-.188 1.239-.894 3.67-1.365 4.404-.424.596-1.412.505-2.165.321-.33-.092-.47-.505-.235-.734 2.118-2.202-.048-4.68-.048-4.68-2.73-2.614-2.824-5.183-2.776-6.1a.443.443 0 0 0-.33-.413c-3.577-.596-3.248-2.11-3.248-2.11C4.78 8.685 7.462 7.997 9.25 7.768Zm-.517 2.569c.33 0 .612-.275.612-.597a.615.615 0 0 0-.612-.596.615.615 0 0 0-.612.596c0 .322.282.597.612.597Z" class="Vector"/>
+                </g>
+            </svg>
+        </i>
+    </a>
 
 
 </nav>

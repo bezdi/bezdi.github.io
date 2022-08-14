@@ -1,42 +1,56 @@
-let canvasData = [];
-
-
 const generateUniverse = (width, height, chance) => {
-    let data = [];
+    let universe = [];
     if (!chance) {
         chance = 0
     }
-    ;
 
     for (let i = 0; i < height; i++) {
-        data.push([])
+        universe.push([])
     }
-    for (let i = 0; i < data.length; i++) {
-        for (let j = 0; j < width; j++) {
-            data[i].push(Math.round(Math.abs(Math.random() + chance - .5)))
-        }
-    }
-    return data;
-}
-
-const drawVerticalLine = (universe) => {
-    const col = Math.floor(universe[0].length * Math.random())
     for (let i = 0; i < universe.length; i++) {
-        for (let j = 0; j < universe[i].length; j++) {
-            if (col == j) {
-                universe[i][j] = 1;
-            }
+        for (let j = 0; j < width; j++) {
+            universe[i].push(Math.round(Math.abs(Math.random() + chance - .5)))
         }
     }
     return universe;
 }
 
-const drawHorizontalLine = (universe) => {
+const addRandomCells = (universe, d, chance, remove) => {
+    let universeHeight = universe.length;
+    let universeWidth = universe[0].length;
 
-    const row = Math.floor(universe.length * Math.random())
+    for (let y = 0; y < universeHeight; y++) {
+        for (let x = 0; x < universeWidth; x++) {
+            if (Math.round(Math.abs(Math.random() + chance - .5))) {
+                let value = remove ? 0 : 1;
+                universe[y][x] = value;
+                drawCellToCanvas(x, y, d, remove ? d.colors.dead : d.colors.alive);
+            }
+        }
+    }
 
-    for (let i = 0; i < universe[row].length; i++) {
-        universe[row][i] = 1;
+    return universe;
+}
+
+const drawVerticalLine = (universe, d, center, remove) => {
+    let cell = remove ? 0 : 1;
+    let width = universe[0].length;
+    const x = center ? Math.floor(width / 2) : Math.floor(width * Math.random())
+    for (let y = 0; y < universe.length; y++) {
+        universe[y][x] = cell;
+        drawCellToCanvas(x, y, d, remove ? d.colors.dead : d.colors.alive);
+    }
+    return universe;
+}
+
+const drawHorizontalLine = (universe, d, center, remove) => {
+    let cell = remove ? 0 : 1;
+    let height = universe.length;
+    const y = center ? Math.floor(height / 2) : Math.floor(height * Math.random())
+
+    for (let x = 0; x < universe[y].length; x++) {
+        universe[y][x] = cell;
+        drawCellToCanvas(x, y, d, remove ? d.colors.dead : d.colors.alive);
     }
     return universe;
 
@@ -63,7 +77,7 @@ const countNeighbours = (universe, cellX, cellY) => {
 
 }
 
-const decidingTheFaithOfTheCell = (alive, numOfNeighbours) => {
+const decidingTheFaithOfACell = (alive, numOfNeighbours) => {
 // # Rules
 // 1. Any live cell with two or three live neighbours survives.
 // 2. Any dead cell with three live neighbours becomes a live cell.
@@ -88,7 +102,7 @@ const calculateNextGen = (universe) => {
 
     for (let y = 0; y < universe.length; y++) {
         for (let x = 0; x < universe[y].length; x++) {
-            newUniverse[y][x] = decidingTheFaithOfTheCell(universe[y][x], countNeighbours(universe, x, y));
+            newUniverse[y][x] = decidingTheFaithOfACell(universe[y][x], countNeighbours(universe, x, y));
         }
     }
 
@@ -96,14 +110,19 @@ const calculateNextGen = (universe) => {
 }
 
 
-const drawUniverseToCanvas = (universe, canvas, ctx, resScale) => {
+const drawUniverseToCanvas = (universe, canvas, ctx, resScale, palette) => {
     for (let y = 0; y < universe.length; y++) {
         for (let x = 0; x < universe[y].length; x++) {
             // universe[y][x] ? ctx.fillStyle = "#096A5F" : ctx.fillStyle = "#FFEACE";
-            universe[y][x] ? ctx.fillStyle = "#096A5F" : ctx.fillStyle = "rgba(255,234,206,.2)";
+            universe[y][x] ? ctx.fillStyle = palette[0] : ctx.fillStyle = palette[1];
             ctx.fillRect(x * resScale, y * resScale, 1 * resScale, 1 * resScale);
         }
     }
+}
+
+const drawCellToCanvas = (x, y, d, color) => {
+    d.ctx.fillStyle = color;
+    d.ctx.fillRect(x * d.resScale, y * d.resScale, 1 * d.resScale, 1 * d.resScale);
 }
 
 
@@ -113,5 +132,6 @@ export {
     calculateNextGen,
     drawUniverseToCanvas,
     drawVerticalLine,
-    drawHorizontalLine
+    drawHorizontalLine,
+    addRandomCells
 };
