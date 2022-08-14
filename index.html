@@ -10,19 +10,22 @@
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --siteWidth: 1024px;
+            --siteWidth: 960px;
             --transition-time: .15s;
-            --color-bg: #FFEACE;
-            --color-text: #5E6278;
-            --color-text-dim: #998b9b;
-            --color-border: #E2C0BB;
-            --color-link: #009179;
-            --color-link-visited: #009179;
-            --color-button-bg: #fdefdc;
-            --color-button-bg-hover: #FFF6E8;
-            --color-icon: #009179;
-            --color-icon-hover: #01a189;
+            --color-bg: #001F53;
+            --color-text: #A569B1;
+            --color-text-highlight: #DA85CD;
+            --color-text-dim: #A569B1;
+            --color-border: #714F93;
+            --color-link: #ffe9d2;
+            --color-link-visited: #ffe9d2;
+            --color-button-bg: #3E3674;
+            --color-button-bg-hover: #714F93;
+            --color-button-text: #FFA3E6;
+            --color-icon: #FFA3E6;
+            --color-icon-hover: #ffe9d2;
             --color-focus-outline: #009179;
+            --color-counter: #ffe9d2;
             --font-family: 'Teko', sans-serif;
         }
 
@@ -38,7 +41,7 @@
 
         .info {
             font-family: var(--font-family);
-            color: var(--color-text-dim);
+            color: var(--color-text);
             font-weight: 300;
             font-size: 18px;
             text-align: left;
@@ -48,7 +51,7 @@
 
         .info span {
             color: black;
-            color: var(--color-text);
+            color: var(--color-text-highlight);
             font-weight: 400;
         }
 
@@ -61,6 +64,7 @@
             margin-right: auto;
             display: block;
             box-sizing: border-box;
+            /*filter: blur(1px);*/
         }
 
         h1 {
@@ -81,7 +85,7 @@
             text-decoration: none;
         }
 
-        h1 a:focus {
+        h1 a:focus, h1 a:hover {
             outline: 0;
             text-decoration: underline;
         }
@@ -115,7 +119,7 @@
             border-bottom: 2px solid var(--color-border);
             background-color: var(--color-button-bg);
             cursor: pointer;
-            transition: background-color easerole = "button" tabindex = "1" -in-out var(--transition-time);
+            transition: background-color ease-in-out var(--transition-time);
             position: relative;
             margin: 0 8px;
             flex-shrink: 0;
@@ -142,6 +146,7 @@
         }
 
         nav > a > span {
+            color: var(--color-button-text);
             font-weight: normal;
             font-size: 16px;
             text-transform: uppercase;
@@ -161,6 +166,9 @@
         nav > a:hover {
             background-color: var(--color-button-bg-hover);
         }
+        nav > a:hover span {
+            color: var(--color-icon-hover);
+        }
 
         nav > a:focus {
             /*outline: none;*/
@@ -176,7 +184,8 @@
         }
 
         #counter {
-            color: #C35354;
+            color: var(--color-counter);
+            font-weight: 400;
         }
 
 
@@ -385,7 +394,6 @@
             </svg>
         </i>
     </a>
-
 
 </nav>
 

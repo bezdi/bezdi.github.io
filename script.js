@@ -10,15 +10,6 @@ import {
 
 addEventListener('DOMContentLoaded', (event) => {
 
-    // let cellSize = 2;
-    // let width = 257;
-    // // let height = 192;
-    // let height = 145;
-    // let resScale = 8;
-    // let transition = true;
-    // let play = false;
-    // let interval;
-
     // Display Object
     let d = {
         canvas: document.getElementById('golCanvas'),
@@ -26,22 +17,21 @@ addEventListener('DOMContentLoaded', (event) => {
         width: 257,
         height: 145,
         resScale: 8,
-        transition: true,
+        transition: false,
         play: true,
         interval: null,
         timeout: 160,
         timeoutMin: 10,
         timeoutMax: 1280,
         colors: {
-            alive: "#096A5F",
-            dead: "#FFEACE",
-            aliveDim: "rgba(9,106,95,0.2)",
-            deadDim: "rgba(255,234,206,0.2)",
-        }
+            alive: "#d35281",
+            dead: "#001F53",
+            aliveDim: "#FFB359",
+            deadDim: "rgba(0,31,83,0.2)",
+        },
     }
     d.ctx = d.canvas.getContext("2d")
 
-    // let canvas = document.getElementById('golCanvas');
     let counter = document.getElementById('counter');
     let timeoutDisplay = document.getElementById('timeout');
 
@@ -55,14 +45,7 @@ addEventListener('DOMContentLoaded', (event) => {
     let horizontalButton = document.getElementById('btn-hori');
     let modeButton = document.getElementById('btn-mode');
 
-
-    // let ctx = canvas.getContext("2d");
-    let myUniverse;
-
-    let cellPalette = ["#096A5F", "#FFEACE"]
-    let transparentCellPalette = ["#096A5F", "rgba(255,234,206,.2)"]
-    let addPalette = ["#096A5F", "rgba(255,255,255,0)"]
-    let removePalette = ["rgba(255,234,206,0)", "#FFEACE"]
+    let universe = [];
 
 
     // ---------------------------------
@@ -92,15 +75,15 @@ addEventListener('DOMContentLoaded', (event) => {
     const reset = () => {
         stop();
         counter.innerHTML = 0;
-        myUniverse = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, 0)
-        drawUniverseToCanvas(myUniverse, d.canvas, d.ctx, d.resScale, [d.colors.alive,d.colors.dead]);
+        universe = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, 0)
+        drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, [d.colors.alive,d.colors.dead]);
     }
     const clear = () => {
-        myUniverse = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, 0)
-        drawUniverseToCanvas(myUniverse, d.canvas, d.ctx, d.resScale, [d.colors.alive,d.colors.dead]);
+        universe = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, 0)
+        drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, [d.colors.alive,d.colors.dead]);
     }
     const random = (remove) => {
-        myUniverse = addRandomCells(myUniverse, d,0.033, remove);
+        universe = addRandomCells(universe, d,0.033, remove);
     }
     const setSpeedButtonsState = () => {
 
@@ -144,12 +127,12 @@ addEventListener('DOMContentLoaded', (event) => {
     }
     const verticalLine = (center, remove) => {
         // universe, canvas, ctx, resScale, center, remove, palette
-        myUniverse = drawVerticalLine(myUniverse, d, center, remove)
+        universe = drawVerticalLine(universe, d, center, remove)
     }
     const horizontalLine = (center, remove) => {
-        myUniverse = drawHorizontalLine(myUniverse, d, center, remove)
+        universe = drawHorizontalLine(universe, d, center, remove)
         // if (!d.play) {
-        //     drawUniverseToCanvas(myUniverse, d.canvas, d.ctx, d.resScale, transition ? transparentCellPalette : cellPalette);
+        //     drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, transition ? transparentCellPalette : cellPalette);
         // }
     }
     const setResolution = (cs) => {
@@ -160,7 +143,7 @@ addEventListener('DOMContentLoaded', (event) => {
         resolutionButton.classList.add("res" + cs);
         d.canvas.setAttribute("width", d.width / d.cellSize * d.resScale)
         d.canvas.setAttribute("height", d.height / d.cellSize * d.resScale)
-        myUniverse = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, 0)
+        universe = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, 0)
         reset();
     }
     const toggleResolution = () => {
@@ -177,15 +160,15 @@ addEventListener('DOMContentLoaded', (event) => {
     // ---------------------------------
     // Init
 
-    // myUniverse = generateUniverse(width / zoom, height / zoom, Math.min(Math.max(.1, Math.random()), 0.7));
+    // universe = generateUniverse(width / zoom, height / zoom, Math.min(Math.max(.1, Math.random()), 0.7));
     setResolution(d.cellSize)
     stop();
     setTimeoutDisplay();
     modeButton.classList.add(d.transition ? "trans" : "sharp");
     d.canvas.setAttribute("width", d.width / d.cellSize * d.resScale)
     d.canvas.setAttribute("height", d.height / d.cellSize * d.resScale)
-    myUniverse = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, .07)
-    drawUniverseToCanvas(myUniverse, d.canvas, d.ctx, d.resScale, cellPalette);
+    universe = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, .07)
+    drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, [d.colors.alive,d.colors.dead]);
 
 
     // ---------------------------------
@@ -311,11 +294,11 @@ addEventListener('DOMContentLoaded', (event) => {
     // DEBUG
 
     let debug = () => {
-        console.log(myUniverse)
-        let newUniverse = calculateNextGen(myUniverse)
-        myUniverse = newUniverse.splice(0, myUniverse.length, ...newUniverse)
-        console.log(myUniverse)
-        drawUniverseToCanvas(myUniverse, canvas, ctx)
+        console.log(universe)
+        let newUniverse = calculateNextGen(universe)
+        universe = newUniverse.splice(0, universe.length, ...newUniverse)
+        console.log(universe)
+        drawUniverseToCanvas(universe, canvas, ctx)
     }
     // debug();
 
@@ -326,9 +309,9 @@ addEventListener('DOMContentLoaded', (event) => {
 
     const execution = () => {
         counter.innerHTML++
-        let newUniverse = calculateNextGen(myUniverse);
-        myUniverse = newUniverse.splice(0, myUniverse.length, ...newUniverse);
-        drawUniverseToCanvas(myUniverse, d.canvas, d.ctx, d.resScale, d.transition ? [d.colors.alive,d.colors.deadDim] : [d.colors.alive,d.colors.dead]);
+        let newUniverse = calculateNextGen(universe);
+        universe = newUniverse.splice(0, universe.length, ...newUniverse);
+        drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, d.transition ? [d.colors.alive,d.colors.deadDim] : [d.colors.alive,d.colors.dead]);
     }
 
 
