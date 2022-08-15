@@ -133,5 +133,6 @@ export {
     drawUniverseToCanvas,
     drawVerticalLine,
     drawHorizontalLine,
-    addRandomCells
+    addRandomCells,
+    drawCellToCanvas
 };

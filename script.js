@@ -4,7 +4,8 @@ import {
     drawUniverseToCanvas,
     drawVerticalLine,
     drawHorizontalLine,
-    addRandomCells
+    addRandomCells,
+    drawCellToCanvas
 } from './helper.js';
 
 
@@ -14,8 +15,8 @@ addEventListener('DOMContentLoaded', (event) => {
     let d = {
         canvas: document.getElementById('golCanvas'),
         cellSize: parseInt(localStorage.getItem('cellSize')) || 2,
-        width: 257,
-        height: 145,
+        width: 256,
+        height: 128,
         resScale: 8,
         transition: JSON.parse(localStorage.getItem('transition')) || false,
         play: true,
@@ -45,7 +46,7 @@ addEventListener('DOMContentLoaded', (event) => {
     let horizontalButton = document.getElementById('btn-hori');
     let modeButton = document.getElementById('btn-mode');
 
-    let universe = [];
+    let  universe = [];
 
 
     // ---------------------------------
@@ -76,14 +77,14 @@ addEventListener('DOMContentLoaded', (event) => {
         stop();
         counter.innerHTML = 0;
         universe = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, 0)
-        drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, [d.colors.alive,d.colors.dead]);
+        drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, [d.colors.alive, d.colors.dead]);
     }
     const clear = () => {
         universe = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, 0)
-        drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, [d.colors.alive,d.colors.dead]);
+        drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, [d.colors.alive, d.colors.dead]);
     }
     const random = (remove) => {
-        universe = addRandomCells(universe, d,0.033, remove);
+        universe = addRandomCells(universe, d, 0.033, remove);
     }
     const setSpeedButtonsState = () => {
 
@@ -109,7 +110,7 @@ addEventListener('DOMContentLoaded', (event) => {
     }
     const accelerate = () => {
         d.timeout = Math.max(d.timeout * 0.5, 10);
-        localStorage.setItem('timeout',d.timeout)
+        localStorage.setItem('timeout', d.timeout)
         setTimeoutDisplay();
         clearInterval(d.interval)
         setSpeedButtonsState()
@@ -119,7 +120,7 @@ addEventListener('DOMContentLoaded', (event) => {
     }
     const decelerate = () => {
         d.timeout = Math.min(d.timeout * 2, 1280);
-        localStorage.setItem('timeout',d.timeout)
+        localStorage.setItem('timeout', d.timeout)
         setTimeoutDisplay()
         clearInterval(d.interval)
         setSpeedButtonsState()
@@ -151,13 +152,13 @@ addEventListener('DOMContentLoaded', (event) => {
     }
     const toggleResolution = () => {
         d.cellSize === 1 ? setResolution(2) : setResolution(1);
-        localStorage.setItem('cellSize',d.cellSize)
+        localStorage.setItem('cellSize', d.cellSize)
     }
     const toggleRenderMode = () => {
         d.transition = !d.transition;
         modeButton.classList = "";
         modeButton.classList.add(d.transition ? "trans" : "sharp");
-        localStorage.setItem('transition',JSON.stringify(d.transition))
+        localStorage.setItem('transition', JSON.stringify(d.transition))
     }
 
 
@@ -173,16 +174,16 @@ addEventListener('DOMContentLoaded', (event) => {
     d.canvas.setAttribute("width", d.width / d.cellSize * d.resScale)
     d.canvas.setAttribute("height", d.height / d.cellSize * d.resScale)
     universe = generateUniverse(d.width / d.cellSize, d.height / d.cellSize, .07)
-    drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, [d.colors.alive,d.colors.dead]);
+    drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, [d.colors.alive, d.colors.dead]);
 
 
     // ---------------------------------
     // ---------------------------------
-    // Buttons
+    // Controls
 
     document.addEventListener('keypress', (e) => {
         console.log(e.key)
-        if (e.key === 'p') {
+        if (e.key === 'p' || e.key === ' ') {
             togglePlay()
         }
         if (e.key === 'f') {
@@ -194,6 +195,28 @@ addEventListener('DOMContentLoaded', (event) => {
         if (e.key === 'r') {
             random()
         }
+        if (e.key === 'R') {
+            random(true)
+        }
+        if (e.key === 'h') {
+            horizontalLine()
+        }
+        if (e.key === 'H') {
+            horizontalLine(true)
+        }
+        if (e.key === 'v') {
+            verticalLine()
+        }
+        if (e.key === 'V') {
+            verticalLine(true)
+        }
+        if (e.key === 'm') {
+            toggleRenderMode();
+        }
+        if (e.key === '0') {
+            clear()
+        }
+
     })
 
     playButton.addEventListener('click', (e) => {
@@ -204,6 +227,7 @@ addEventListener('DOMContentLoaded', (event) => {
     })
     playButton.addEventListener('keypress', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
+            e.stopPropagation()
             togglePlay()
         }
     })
@@ -213,6 +237,7 @@ addEventListener('DOMContentLoaded', (event) => {
     })
     randomButton.addEventListener('keypress', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
+            e.stopPropagation()
             random(e.shiftKey)
         }
     })
@@ -226,6 +251,7 @@ addEventListener('DOMContentLoaded', (event) => {
     })
     accButton.addEventListener('keypress', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
+            e.stopPropagation()
             accelerate()
         }
     })
@@ -235,6 +261,7 @@ addEventListener('DOMContentLoaded', (event) => {
     })
     decButton.addEventListener('keypress', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
+            e.stopPropagation()
             decelerate()
         }
     })
@@ -244,20 +271,20 @@ addEventListener('DOMContentLoaded', (event) => {
     })
     modeButton.addEventListener('keypress', (e) => {
         if (e.key === 'Enter' || e.key === ' ') {
+            e.stopPropagation()
             toggleRenderMode()
         }
     })
 
     verticalButton.addEventListener('click', (e) => {
 
-        e.stopPropagation()
         console.log(e)
         verticalLine(e.shiftKey, false)
     })
     verticalButton.addEventListener('keypress', (e) => {
 
-        e.stopPropagation()
         if (e.key === 'Enter' || e.key === ' ') {
+            e.stopPropagation()
             verticalLine(e.shiftKey, false)
         }
     })
@@ -267,14 +294,14 @@ addEventListener('DOMContentLoaded', (event) => {
     });
     horizontalButton.addEventListener('click', (e) => {
 
-        e.stopPropagation()
         horizontalLine(e.shiftKey, false)
     })
     horizontalButton.addEventListener('keypress', (e) => {
 
-        e.stopPropagation()
+        // e.stopPropagation()
         if (e.key === 'Enter' || e.key === ' ') {
-            horizontalLine(e.shiftKey, false)
+            e.stopPropagation()
+            horizontalLine(e.shiftKey, e.ctrlKey)
         }
     })
     horizontalButton.addEventListener('contextmenu', (e) => {
@@ -285,13 +312,44 @@ addEventListener('DOMContentLoaded', (event) => {
     clearButton.addEventListener('click', (e) => {
         clear();
     })
+    clearButton.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.stopPropagation()
+            clear();
+        }
+    })
 
     resolutionButton.addEventListener('click', (e) => {
         toggleResolution();
-
+    })
+    resolutionButton.addEventListener('keypress', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.stopPropagation()
+            toggleResolution();
+        }
     })
 
     resolutionButton.querySelector('span').innerHTML = 'x' + d.cellSize;
+
+
+    // ---------------------------------
+    // ---------------------------------
+    // Draw on Canvas
+
+    d.canvas.addEventListener('click', (e) => {
+        let rect = e.target.getBoundingClientRect();
+        const clickXRatio = (e.clientX - rect.left) / rect.width;
+        const clickYRatio = (e.clientY - rect.top) / rect.height;
+        const uniX = Math.floor(universe[0].length*clickXRatio);
+        const uniY = Math.floor(universe.length*clickYRatio);
+        // console.log("Left: " + x + " ; Top: " + y + ".");
+        console.log(`Left:${uniX} ratio Right:${uniY} ratio`);
+
+
+        universe[uniY][uniX] ? universe[uniY][uniX] = 0 : universe[uniY][uniX] = 1;
+        drawCellToCanvas(uniX,uniY,d,universe[uniY][uniX] ? d.colors.alive : d.colors.dead)
+
+    })
 
 
     // ---------------------------------
@@ -300,10 +358,6 @@ addEventListener('DOMContentLoaded', (event) => {
 
     let debug = () => {
         console.log(universe)
-        let newUniverse = calculateNextGen(universe)
-        universe = newUniverse.splice(0, universe.length, ...newUniverse)
-        console.log(universe)
-        drawUniverseToCanvas(universe, canvas, ctx)
     }
     // debug();
 
@@ -316,7 +370,7 @@ addEventListener('DOMContentLoaded', (event) => {
         counter.innerHTML++
         let newUniverse = calculateNextGen(universe);
         universe = newUniverse.splice(0, universe.length, ...newUniverse);
-        drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, d.transition ? [d.colors.alive,d.colors.deadDim] : [d.colors.alive,d.colors.dead]);
+        drawUniverseToCanvas(universe, d.canvas, d.ctx, d.resScale, d.transition ? [d.colors.alive, d.colors.deadDim] : [d.colors.alive, d.colors.dead]);
     }
 
 

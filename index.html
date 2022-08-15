@@ -10,7 +10,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Teko:wght@300;400;500&display=swap" rel="stylesheet">
     <style>
         :root {
-            --siteWidth: 960px;
+            --siteWidth: 1280px;
             --transition-time: .15s;
             --color-bg: #001F53;
             --color-text: #A569B1;
@@ -57,14 +57,29 @@
 
         canvas {
             width: 100%;
+            display: block;
+            /*border-radius: 3px;*/
+            /*box-sizing: border-box;*/
+            /*filter: blur(1px);*/
+        }
+
+        .canvas-wrapper {
             max-width: var(--siteWidth);
-            border: 2px solid var(--color-border);
-            border-radius: 3px;
             margin-left: auto;
             margin-right: auto;
+            position: relative;
+        }
+        .canvas-wrapper::after {
+            content: ' ';
             display: block;
-            box-sizing: border-box;
-            /*filter: blur(1px);*/
+            position: absolute;
+            top: 0;
+            right: 0;
+            bottom: 0;
+            left: 0;
+            border-radius: 3px;
+            border: 2px solid var(--color-border);
+            pointer-events: none;
         }
 
         h1 {
@@ -95,17 +110,17 @@
             max-width: var(--siteWidth);
             margin: 16px auto;
             display: flex;
+            border-top: 2px solid var(--color-border);
+            padding: 16px 0;
         }
 
         nav {
             width: 100%;
             max-width: var(--siteWidth);
             overflow: auto;
-            margin-left: auto;
-            margin-right: auto;
+            margin: 16px auto;
             display: flex;
             justify-content: flex-start;
-            padding-bottom: 8px;
         }
 
         nav > a {
@@ -241,22 +256,15 @@
 </head>
 <body>
 
+<div class="canvas-wrapper">
+    <canvas id="golCanvas">
+        Your browser does not support the canvas element.
+    </canvas>
+</div>
 
-<canvas id="golCanvas">
-    Your browser does not support the canvas element.
-</canvas>
 
 
-<header>
-    <div class="title">
-        <h1><a tabindex="1" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a>
-            <span>by Bezdi</span></h1>
-    </div>
 
-    <div class="info">
-        Update interval: <span id="timeout">100 ms</span>
-    </div>
-</header>
 <nav>
     <a role="button" tabindex="5" id="btn-zoom">
         <span>1x</span>
@@ -394,8 +402,18 @@
             </svg>
         </i>
     </a>
-
 </nav>
+
+<header>
+    <div class="title">
+        <h1><a tabindex="1" href="https://en.wikipedia.org/wiki/Conway%27s_Game_of_Life">Game of Life</a>
+            <span>by Bezdi</span></h1>
+    </div>
+
+    <div class="info">
+        Update interval: <span id="timeout">100 ms</span>
+    </div>
+</header>
 
 
 </body>
