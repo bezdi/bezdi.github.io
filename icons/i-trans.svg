@@ -1,0 +1,12 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+  <g class="i-trans">
+    <path d="M12 12h8v8h-8z" class="Rectangle 8"/>
+    <path d="M20 12h8v8h-8z" class="Rectangle 9" opacity=".4"/>
+    <path d="M12 20h8v8h-8z" class="Rectangle 15" opacity=".6"/>
+    <path d="M20 4h8v8h-8z" class="Rectangle 14" opacity=".2"/>
+    <path d="M4 12h8v8H4z" class="Rectangle 12" opacity=".4"/>
+    <path d="M4 4h8v8H4z" class="Rectangle 13" opacity=".2"/>
+    <path d="M12 4h8v8h-8z" class="Rectangle 10" opacity=".6"/>
+    <path d="M4 20h8v8H4z" class="Rectangle 11" opacity=".2"/>
+  </g>
+</svg>

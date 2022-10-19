@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" fill="currentColor" viewBox="0 0 32 32">
+  <g class="i-highres">
+    <g class="Group 5">
+      <g class="Frame 2">
+        <g class="Group 1">
+          <path d="M6 6h5v5H6z" class="Rectangle 1"/>
+          <path d="M11 11h5v5h-5z" class="Rectangle 2"/>
+        </g>
+        <g class="Group 3">
+          <path d="M6 16h5v5H6z" class="Rectangle 1"/>
+          <path d="M11 21h5v5h-5z" class="Rectangle 2"/>
+        </g>
+        <g class="Group 2">
+          <path d="M16 6h5v5h-5z" class="Rectangle 1"/>
+          <path d="M21 11h5v5h-5z" class="Rectangle 2"/>
+        </g>
+        <g class="Group 4">
+          <path d="M16 16h5v5h-5z" class="Rectangle 1"/>
+          <path d="M21 21h5v5h-5z" class="Rectangle 2"/>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
