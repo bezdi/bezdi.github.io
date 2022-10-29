@@ -1,11 +1,11 @@
 {
   "files": {
-    "main.js": "/crewtime/static/js/main.625d1328.js",
+    "main.js": "/crewtime/static/js/main.746227cb.js",
     "static/media/crewtime-logo.svg": "/crewtime/static/media/crewtime-logo.9409e68f4c710189ac0e29fde8be2505.svg",
     "index.html": "/crewtime/index.html",
-    "main.625d1328.js.map": "/crewtime/static/js/main.625d1328.js.map"
+    "main.746227cb.js.map": "/crewtime/static/js/main.746227cb.js.map"
   },
   "entrypoints": [
-    "static/js/main.625d1328.js"
+    "static/js/main.746227cb.js"
   ]
 }
